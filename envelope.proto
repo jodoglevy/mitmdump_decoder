@@ -1,0 +1,58 @@
+
+syntax = "proto3";
+
+package PGo;
+
+enum Type {
+  METHOD_UNSET = 0;
+  GET_PLAYER = 2;
+  TIMESTAMP = 4;
+
+  FORT_SEARCH = 101;
+  //GET_PLAYER = 102;
+  CATCH_POKEMON = 103;
+  FORT_DETAILS = 104;
+  //ITEM_USE
+  GET_MAP_OBJECTS = 106;
+  GET_PLAYER_PROFILE = 121;
+  GET_GYM_DETAILS = 134;
+  USE_INCENSE = 141;
+  INCENSE_ENCOUNTER = 143;
+  GET_DOWNLOAD_URLS = 301;
+  SFIDA_ACTION_LOG = 801;
+  DELIM1 = 126;
+  DELIM2 = 129;
+}
+
+message MapFieldEntry {
+  Type key = 1;
+  bytes value = 2;
+}
+
+enum Direction {
+  UNKNOWN = 0;
+  RESPONSE = 1;
+  REQUEST = 2;
+}
+
+message Thing {
+  bytes start = 1;
+  uint64 timestamp = 2;
+  bytes end = 3;
+}
+
+message RpcRequestEnvelopeProto {
+  Direction direction = 1;
+  uint64 request_id = 3;
+
+  repeated MapFieldEntry parameter = 4;
+
+  bytes footer = 6;
+  double lat = 7;
+  double long = 8;
+  double altitude = 9;
+
+  Thing thing = 11;
+
+  int32 unknown12 = 12;
+}

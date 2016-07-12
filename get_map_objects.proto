@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package PGo;
+
+message MapObjectsRequest {
+  Cell cell_request = 1;
+  bytes unknown2 = 2;
+  double lat = 3;
+  double long = 4;
+}
+
+message Cell {
+  repeated uint64 typea = 402653184;
+  repeated uint64 typeb = 134217728;
+}
+
