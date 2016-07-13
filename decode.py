@@ -5,6 +5,8 @@ import sys
 from mitmproxy.script import concurrent
 from mitmproxy.models import decoded
 
+from geojson import GeometryCollection, Point, Feature, FeatureCollection
+import geojson
 
 import site
 site.addsitedir("/usr/local/Cellar/protobuf/3.0.0-beta-3/libexec/lib/python2.7/site-packages")
@@ -58,11 +60,41 @@ def response(context, flow):
       if (key == GET_MAP_OBJECTS):
         mor = MapObjectsResponse()
         mor.ParseFromString(value)
-        print("GET_MAP_OBJECTS %i tiles", len(mor.tiles))
+        print("GET_MAP_OBJECTS %i tiles" % len(mor.tiles))
+        features = []
+
         for tile in mor.tiles:
-          print("%i forts(3) | %i forts(4) | %i forts(5) | %i forts(9)" % (len(tile.forts3), len(tile.forts4), len(tile.forts5), len(tile.forts9)))
-          for fort in tile.forts3:
-            print("%s: %f, %f" % (fort.id, fort.lat, fort.long))
+          print("S2 Cell %i" % tile.id)
+          for fort in tile.forts:
+            p = Point((fort.latitude, fort.longitude))
+            f = Feature(geometry=p, properties={"tile": tile.id, "type": "fort"})
+            print(p, f)
+            features.append(f)
+
+          for fort in tile.location4:
+            p = Point((fort.latitude, fort.longitude))
+            f = Feature(geometry=p, properties={"tile": tile.id, "type": "location4"})
+            features.append(f)
+
+          for fort in tile.location9:
+            p = Point((fort.latitude, fort.longitude))
+            f = Feature(geometry=p, properties={"tile": tile.id, "type": "location9"})
+            features.append(f)
+
+          for fort in tile.close_pokemon_a:
+            p = Point((fort.latitude, fort.longitude))
+            f = Feature(geometry=p, properties={"tile": tile.id, "type": "close_pokemon_a"})
+            features.append(f)
+
+          for fort in tile.close_pokemon_b:
+            p = Point((fort.latitude, fort.longitude))
+            f = Feature(geometry=p, properties={"tile": tile.id, "type": "close_pokemon_b"})
+            features.append(f)
+
+        fc = FeatureCollection(features)
+        dump = geojson.dumps(fc, sort_keys=True)
+        f = open('get_map_objects.json', 'w')
+        f.write(dump)
       elif (key == FORT_DETAILS):
         mor = FortDetailsOutProto()
         mor.ParseFromString(value)
