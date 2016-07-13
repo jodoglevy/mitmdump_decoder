@@ -26,8 +26,16 @@ var map = L.mapbox.map('map', 'mapbox.streets').setView([45.5154685974, -122.682
 // delivering it should support CORS.
 var featureLayer = L.mapbox.featureLayer().loadURL('get_map_objects.json').addTo(map);
 
-</script>
+featureLayer.on('mouseover', function(e) {
+  console.log('mouseover');
+  e.layer.openPopup();
+});
+featureLayer.on('mouseout', function(e) {
+  e.layer.closePopup();
+});
 
+
+</script>
 
 </body>
 </html>
