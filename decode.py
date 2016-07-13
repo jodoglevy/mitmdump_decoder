@@ -12,11 +12,9 @@ sys.path.append("/usr/local/lib/python2.7/site-packages")
 sys.path.append("/usr/local/Cellar/protobuf/3.0.0-beta-3/libexec/lib/python2.7/site-packages")
 from google.protobuf.internal import enum_type_wrapper
 
-from envelope_pb2 import *
-from get_map_objects_pb2 import *
-from fort_details_pb2 import *
-from fort_search_pb2 import *
-
+from protocol.map_pb2 import *
+from protocol.rpc_pb2 import *
+from protocol.fortdetails_pb2 import *
 
 associate = {} #Match responses to their requests
 

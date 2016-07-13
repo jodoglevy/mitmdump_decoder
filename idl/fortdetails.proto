@@ -3,6 +3,19 @@ syntax = "proto3";
 
 package PGo;
 
+message FortDetailsOutProto {
+  string id = 1;
+  string name = 4;
+  string description = 12;
+  string image_url = 5;
+}
+
+message FortDetailsProto {
+  string id = 1;
+  double lat = 2;
+  double long = 3;
+}
+
 message FortSearchProto {
   string id = 1;
 
