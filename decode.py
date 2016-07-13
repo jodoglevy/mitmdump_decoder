@@ -15,6 +15,7 @@ from google.protobuf.internal import enum_type_wrapper
 from envelope_pb2 import *
 from get_map_objects_pb2 import *
 from fort_details_pb2 import *
+from fort_search_pb2 import *
 
 
 associate = {} #Match responses to their requests
@@ -35,6 +36,10 @@ def request(context, flow):
       print(mor)
     elif (key == FORT_DETAILS):
       mor = FortDetailsProto()
+      mor.ParseFromString(value)
+      print(mor)
+    elif (key == FORT_SEARCH):
+      mor = FortSearchProto()
       mor.ParseFromString(value)
       print(mor)
     else:
@@ -58,6 +63,10 @@ def response(context, flow):
             print("%s: %f, %f" % (fort.id, fort.lat, fort.long))
       elif (key == FORT_DETAILS):
         mor = FortDetailsOutProto()
+        mor.ParseFromString(value)
+        print(mor)
+      elif (key == FORT_SEARCH):
+        mor = FortSearchOutProto()
         mor.ParseFromString(value)
         print(mor)
       else:

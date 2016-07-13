@@ -1,0 +1,31 @@
+
+syntax = "proto3";
+
+package PGo;
+
+message FortSearchProto {
+  string id = 1;
+
+  //Trainer and Fort for calculating distance?
+  double lat = 2;
+  double long = 3;
+  double lat2 = 4;
+  double long2 = 5;
+}
+
+//I'm making this up as a I go along
+message FortSearchOutProto {
+  bool success = 1;
+  message Result {
+    uint64 ts1 = 1;
+    uint64 ts2 = 2;
+    repeated Item items = 3;
+  }
+  Result result = 2;
+}
+
+message Item {
+  uint64 timestamp = 1;
+  //Stuff nested under '3'
+}
+
