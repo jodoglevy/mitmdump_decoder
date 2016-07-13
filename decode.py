@@ -40,6 +40,10 @@ def request(context, flow):
       mor = FortSearchProto()
       mor.ParseFromString(value)
       print(mor)
+    elif (key == GET_GYM_DETAILS):
+      mor = FortDetailsProto()
+      mor.ParseFromString(value)
+      print(mor)
     else:
       print("API: %s" % key)
 
