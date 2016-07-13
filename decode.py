@@ -66,29 +66,28 @@ def response(context, flow):
         for tile in mor.tiles:
           print("S2 Cell %i" % tile.id)
           for fort in tile.forts:
-            p = Point((fort.latitude, fort.longitude))
-            f = Feature(geometry=p, properties={"tile": tile.id, "type": "fort"})
-            print(p, f)
+            p = Point((fort.longitude, fort.latitude))
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort"})
             features.append(f)
 
           for fort in tile.location4:
-            p = Point((fort.latitude, fort.longitude))
-            f = Feature(geometry=p, properties={"tile": tile.id, "type": "location4"})
+            p = Point((fort.longitude, fort.latitude))
+            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4"})
             features.append(f)
 
           for fort in tile.location9:
-            p = Point((fort.latitude, fort.longitude))
-            f = Feature(geometry=p, properties={"tile": tile.id, "type": "location9"})
+            p = Point((fort.longitude, fort.latitude))
+            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location9"})
             features.append(f)
 
           for fort in tile.close_pokemon_a:
-            p = Point((fort.latitude, fort.longitude))
-            f = Feature(geometry=p, properties={"tile": tile.id, "type": "close_pokemon_a"})
+            p = Point((fort.longitude, fort.latitude))
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a"})
             features.append(f)
 
           for fort in tile.close_pokemon_b:
-            p = Point((fort.latitude, fort.longitude))
-            f = Feature(geometry=p, properties={"tile": tile.id, "type": "close_pokemon_b"})
+            p = Point((fort.longitude, fort.latitude))
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b"})
             features.append(f)
 
         fc = FeatureCollection(features)
