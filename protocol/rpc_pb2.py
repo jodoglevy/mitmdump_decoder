@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='rpc.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xe2\x01\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*\x93\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\x88\x03\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x33\n\x04\x61uth\x18\n \x01(\x0b\x32%.PGo.RpcRequestEnvelopeProto.AuthInfo\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x1ao\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x38\n\x05token\x18\x02 \x01(\x0b\x32).PGo.RpcRequestEnvelopeProto.AuthInfo.JWT\x1a\x17\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*\x93\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -89,8 +89,8 @@ _TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=569,
-  serialized_end=844,
+  serialized_start=735,
+  serialized_end=1010,
 )
 _sym_db.RegisterEnumDescriptor(_TYPE)
 
@@ -116,8 +116,8 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=846,
-  serialized_end=897,
+  serialized_start=1012,
+  serialized_end=1063,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
@@ -225,6 +225,73 @@ _THING = _descriptor.Descriptor(
 )
 
 
+_RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT = _descriptor.Descriptor(
+  name='JWT',
+  full_name='PGo.RpcRequestEnvelopeProto.AuthInfo.JWT',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='contents', full_name='PGo.RpcRequestEnvelopeProto.AuthInfo.JWT.contents', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=500,
+  serialized_end=523,
+)
+
+_RPCREQUESTENVELOPEPROTO_AUTHINFO = _descriptor.Descriptor(
+  name='AuthInfo',
+  full_name='PGo.RpcRequestEnvelopeProto.AuthInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='provider', full_name='PGo.RpcRequestEnvelopeProto.AuthInfo.provider', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='token', full_name='PGo.RpcRequestEnvelopeProto.AuthInfo.token', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=412,
+  serialized_end=523,
+)
+
 _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
   name='RpcRequestEnvelopeProto',
   full_name='PGo.RpcRequestEnvelopeProto',
@@ -282,14 +349,21 @@ _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='thing', full_name='PGo.RpcRequestEnvelopeProto.thing', index=7,
+      name='auth', full_name='PGo.RpcRequestEnvelopeProto.auth', index=7,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='thing', full_name='PGo.RpcRequestEnvelopeProto.thing', index=8,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='unknown12', full_name='PGo.RpcRequestEnvelopeProto.unknown12', index=8,
+      name='unknown12', full_name='PGo.RpcRequestEnvelopeProto.unknown12', index=9,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -298,7 +372,7 @@ _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_RPCREQUESTENVELOPEPROTO_AUTHINFO, ],
   enum_types=[
   ],
   options=None,
@@ -308,7 +382,7 @@ _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=131,
-  serialized_end=357,
+  serialized_end=523,
 )
 
 
@@ -394,13 +468,17 @@ _RPCRESPONSEENVELOPEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=360,
-  serialized_end=566,
+  serialized_start=526,
+  serialized_end=732,
 )
 
 _MAPFIELDENTRY.fields_by_name['key'].enum_type = _TYPE
+_RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT.containing_type = _RPCREQUESTENVELOPEPROTO_AUTHINFO
+_RPCREQUESTENVELOPEPROTO_AUTHINFO.fields_by_name['token'].message_type = _RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT
+_RPCREQUESTENVELOPEPROTO_AUTHINFO.containing_type = _RPCREQUESTENVELOPEPROTO
 _RPCREQUESTENVELOPEPROTO.fields_by_name['direction'].enum_type = _DIRECTION
 _RPCREQUESTENVELOPEPROTO.fields_by_name['parameter'].message_type = _MAPFIELDENTRY
+_RPCREQUESTENVELOPEPROTO.fields_by_name['auth'].message_type = _RPCREQUESTENVELOPEPROTO_AUTHINFO
 _RPCREQUESTENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
 _RPCRESPONSEENVELOPEPROTO.fields_by_name['direction'].enum_type = _DIRECTION
 _RPCRESPONSEENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
@@ -426,11 +504,27 @@ Thing = _reflection.GeneratedProtocolMessageType('Thing', (_message.Message,), d
 _sym_db.RegisterMessage(Thing)
 
 RpcRequestEnvelopeProto = _reflection.GeneratedProtocolMessageType('RpcRequestEnvelopeProto', (_message.Message,), dict(
+
+  AuthInfo = _reflection.GeneratedProtocolMessageType('AuthInfo', (_message.Message,), dict(
+
+    JWT = _reflection.GeneratedProtocolMessageType('JWT', (_message.Message,), dict(
+      DESCRIPTOR = _RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT,
+      __module__ = 'rpc_pb2'
+      # @@protoc_insertion_point(class_scope:PGo.RpcRequestEnvelopeProto.AuthInfo.JWT)
+      ))
+    ,
+    DESCRIPTOR = _RPCREQUESTENVELOPEPROTO_AUTHINFO,
+    __module__ = 'rpc_pb2'
+    # @@protoc_insertion_point(class_scope:PGo.RpcRequestEnvelopeProto.AuthInfo)
+    ))
+  ,
   DESCRIPTOR = _RPCREQUESTENVELOPEPROTO,
   __module__ = 'rpc_pb2'
   # @@protoc_insertion_point(class_scope:PGo.RpcRequestEnvelopeProto)
   ))
 _sym_db.RegisterMessage(RpcRequestEnvelopeProto)
+_sym_db.RegisterMessage(RpcRequestEnvelopeProto.AuthInfo)
+_sym_db.RegisterMessage(RpcRequestEnvelopeProto.AuthInfo.JWT)
 
 RpcResponseEnvelopeProto = _reflection.GeneratedProtocolMessageType('RpcResponseEnvelopeProto', (_message.Message,), dict(
   DESCRIPTOR = _RPCRESPONSEENVELOPEPROTO,

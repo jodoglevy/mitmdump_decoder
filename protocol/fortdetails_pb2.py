@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='fortdetails.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x66ortdetails.proto\x12\x03PGo\"\xf3\x01\n\x13\x46ortDetailsOutProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\x12\n\nisPokeStop\x18\t \x01(\x08\x12\x0b\n\x03lat\x18\n \x01(\x01\x12\x0c\n\x04long\x18\x0b \x01(\x01\x12\x13\n\x0b\x64\x65scription\x18\x0c \x01(\t\x12+\n\x04lure\x18\r \x01(\x0b\x32\x1d.PGo.FortDetailsOutProto.Lure\x1a>\n\x04Lure\x12\x11\n\tsomething\x18\x01 \x01(\r\x12\x12\n\nexpiration\x18\x02 \x01(\x04\x12\x0f\n\x07trainer\x18\x03 \x01(\t\"9\n\x10\x46ortDetailsProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\"U\n\x0f\x46ortSearchProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\x12\x0c\n\x04lat2\x18\x04 \x01(\x01\x12\r\n\x05long2\x18\x05 \x01(\x01\"\x93\x01\n\x12\x46ortSearchOutProto\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x06result\x18\x02 \x01(\x0b\x32\x1e.PGo.FortSearchOutProto.Result\x1a<\n\x06Result\x12\x0b\n\x03ts1\x18\x01 \x01(\x04\x12\x0b\n\x03ts2\x18\x02 \x01(\x04\x12\x18\n\x05items\x18\x03 \x03(\x0b\x32\t.PGo.Item\"\x19\n\x04Item\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\"\xaf\x04\n\x03Gym\x12!\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x10.PGo.Gym.Details\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x0c\n\x04team\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x1a\xc0\x03\n\x07\x44\x65tails\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.PGo.Gym.Details.MoreDetails\x12&\n\x06levels\x18\x02 \x03(\x0b\x32\x16.PGo.Gym.Details.Level\x1aY\n\x0bMoreDetails\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\x12\x10\n\x08prestige\x18\n \x01(\x04\x1a\x82\x02\n\x05Level\x12/\n\x07pokemon\x18\x01 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Pokemon\x12/\n\x07trainer\x18\x02 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Trainer\x1ao\n\x07Pokemon\x12\n\n\x02\x63p\x18\x03 \x01(\x04\x12\x15\n\rcurrentHealth\x18\x04 \x01(\x04\x12\x11\n\tmaxHealth\x18\x05 \x01(\x04\x12\x0f\n\x07trainer\x18\t \x01(\t\x12\n\n\x02id\x18\x16 \x01(\x04\x12\x11\n\ttimestmap\x18\x1a \x01(\x04\x1a&\n\x07Trainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\x04\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x66ortdetails.proto\x12\x03PGo\"\xf3\x01\n\x13\x46ortDetailsOutProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\timage_url\x18\x05 \x01(\t\x12\x12\n\nisPokeStop\x18\t \x01(\x08\x12\x0b\n\x03lat\x18\n \x01(\x01\x12\x0c\n\x04long\x18\x0b \x01(\x01\x12\x13\n\x0b\x64\x65scription\x18\x0c \x01(\t\x12+\n\x04lure\x18\r \x01(\x0b\x32\x1d.PGo.FortDetailsOutProto.Lure\x1a>\n\x04Lure\x12\x11\n\tsomething\x18\x01 \x01(\r\x12\x12\n\nexpiration\x18\x02 \x01(\x04\x12\x0f\n\x07trainer\x18\x03 \x01(\t\"9\n\x10\x46ortDetailsProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\"U\n\x0f\x46ortSearchProto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\x12\x0c\n\x04lat2\x18\x04 \x01(\x01\x12\r\n\x05long2\x18\x05 \x01(\x01\"\x93\x01\n\x12\x46ortSearchOutProto\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x06result\x18\x02 \x01(\x0b\x32\x1e.PGo.FortSearchOutProto.Result\x1a<\n\x06Result\x12\x0b\n\x03ts1\x18\x01 \x01(\x04\x12\x0b\n\x03ts2\x18\x02 \x01(\x04\x12\x18\n\x05items\x18\x03 \x03(\x0b\x32\t.PGo.Item\"\x19\n\x04Item\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\"\x97\x05\n\x03Gym\x12!\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x10.PGo.Gym.Details\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x0c\n\x04team\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x1a\xa8\x04\n\x07\x44\x65tails\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.PGo.Gym.Details.MoreDetails\x12&\n\x06levels\x18\x02 \x03(\x0b\x32\x16.PGo.Gym.Details.Level\x1aY\n\x0bMoreDetails\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\x12\x10\n\x08prestige\x18\n \x01(\x04\x1a\xea\x02\n\x05Level\x12/\n\x07pokemon\x18\x01 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Pokemon\x12/\n\x07trainer\x18\x02 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Trainer\x1a\xd6\x01\n\x07Pokemon\x12\n\n\x02\x63p\x18\x03 \x01(\x04\x12\x15\n\rcurrentHealth\x18\x04 \x01(\x04\x12\x11\n\tmaxHealth\x18\x05 \x01(\x04\x12\x0f\n\x07moveOne\x18\x06 \x01(\x04\x12\x0f\n\x07moveTwo\x18\x07 \x01(\x04\x12\x0f\n\x07trainer\x18\t \x01(\t\x12\x0e\n\x06height\x18\x0f \x01(\x02\x12\x0e\n\x06weight\x18\x10 \x01(\x02\x12\x18\n\x10\x43\x61pturedS2CellId\x18\x16 \x01(\x04\x12\x16\n\x0e\x43reationTimeMs\x18\x1a \x01(\x04\x12\x10\n\x08nickname\x18\x1e \x01(\t\x1a&\n\x07Trainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\x04\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -454,23 +454,58 @@ _GYM_DETAILS_LEVEL_POKEMON = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='trainer', full_name='PGo.Gym.Details.Level.Pokemon.trainer', index=3,
+      name='moveOne', full_name='PGo.Gym.Details.Level.Pokemon.moveOne', index=3,
+      number=6, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='moveTwo', full_name='PGo.Gym.Details.Level.Pokemon.moveTwo', index=4,
+      number=7, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trainer', full_name='PGo.Gym.Details.Level.Pokemon.trainer', index=5,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='id', full_name='PGo.Gym.Details.Level.Pokemon.id', index=4,
+      name='height', full_name='PGo.Gym.Details.Level.Pokemon.height', index=6,
+      number=15, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='weight', full_name='PGo.Gym.Details.Level.Pokemon.weight', index=7,
+      number=16, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='CapturedS2CellId', full_name='PGo.Gym.Details.Level.Pokemon.CapturedS2CellId', index=8,
       number=22, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='timestmap', full_name='PGo.Gym.Details.Level.Pokemon.timestmap', index=5,
+      name='CreationTimeMs', full_name='PGo.Gym.Details.Level.Pokemon.CreationTimeMs', index=9,
       number=26, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nickname', full_name='PGo.Gym.Details.Level.Pokemon.nickname', index=10,
+      number=30, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -486,8 +521,8 @@ _GYM_DETAILS_LEVEL_POKEMON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1004,
-  serialized_end=1115,
+  serialized_start=1005,
+  serialized_end=1219,
 )
 
 _GYM_DETAILS_LEVEL_TRAINER = _descriptor.Descriptor(
@@ -523,8 +558,8 @@ _GYM_DETAILS_LEVEL_TRAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1117,
-  serialized_end=1155,
+  serialized_start=1221,
+  serialized_end=1259,
 )
 
 _GYM_DETAILS_LEVEL = _descriptor.Descriptor(
@@ -561,7 +596,7 @@ _GYM_DETAILS_LEVEL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=897,
-  serialized_end=1155,
+  serialized_end=1259,
 )
 
 _GYM_DETAILS = _descriptor.Descriptor(
@@ -598,7 +633,7 @@ _GYM_DETAILS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=707,
-  serialized_end=1155,
+  serialized_end=1259,
 )
 
 _GYM = _descriptor.Descriptor(
@@ -656,7 +691,7 @@ _GYM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=596,
-  serialized_end=1155,
+  serialized_end=1259,
 )
 
 _FORTDETAILSOUTPROTO_LURE.containing_type = _FORTDETAILSOUTPROTO
