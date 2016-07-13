@@ -1,4 +1,3 @@
-
 syntax = "proto3";
 
 package PGo;
@@ -15,31 +14,96 @@ message Cell {
   repeated uint64 typeb = 134217728;
 }
 
+// The response sent in response to the map object request
 message MapObjectsResponse {
   repeated Tile tiles = 1;
 }
 
+// A tile is a geographical "zone" containing objects like pokemon, gyms, and pokestops
 message Tile {
-  uint64 map_tile_id = 1;
-  uint64 timestmap = 2;
-  repeated FortDetail forts3 = 3;
-  repeated Fort forts4 = 4;
-  repeated Fort forts5 = 5;
-  repeated Fort forts9 = 9;
+  uint64 id = 1;
+  uint64 current_timestamp = 2;
+  repeated Fort forts = 3;
+  
+  // TODO: not sure what these objects represent
+  repeated NotSure not_sure4 = 4;
+  repeated NotSure not_sure9 = 9;
+
+  // The closest pokemon, if it is within 2 "steps" or closer, will have its info in these two objects
+  // This pokemon's info will not be repeated in pokemon_in_area
+  ClosestPokemonSpawnInfo close_pokemon_spawn_info = 5;
+  ClosestPokemonUnspawnInfo close_pokemon_unspawn_info = 10;
+
+  repeated Pokemon pokemon_in_area = 11;
 }
 
-message FortDetail {
-  string id = 1;
-  uint64 timestamp = 2;
-  double lat = 3;
-  double long = 4;
-  bool isPokestop = 9;
-  uint64 resetTs = 14;
-  uint64 gymPrestige = 10;
-}
-
+// A "fort" is the internal name for a gym or pokestop point of interest
 message Fort {
-  double lat = 2;
-  double long = 3;
+  string id = 1;
+  double latitude = 3;
+  double longitude = 4;
+
+  // TODO: not sure what these fields represent
+  uint64 timestamp = 2;
+  bool not_sure8 = 8;
+
+  // applies only to a pokestop fort
+  bool is_pokestop = 9;
+  uint64 timestamp_when_pokestop_can_be_actived_again = 14;
+
+  // applies only to a pokestop fort with a lure attached
+  string not_sure12 = 12; // seems to always contain "\365\003"
+  FortLureInfo fort_lure_info = 13;
+
+  // applies only to a gym fort
+  enum team_color {
+    UNDEFINED = 0;
+    BLUE = 1;
+    RED = 2;
+    YELLOW = 3;
+  }
+  team_color gym_leader_team_color = 5;
+  uint64 pokedex_number_of_pokemon_that_leads_gym = 6;
+  uint64 gym_prestige_experience = 10;
 }
 
+message FortLureInfo {
+  string fort_id = 1;
+  double not_sure2 = 2; // TODO: not sure what this is
+  uint64 pokedex_number_of_pokemon_at_lure = 3; // TODO: needs validation
+  uint64 timestamp_when_lure_will_expire = 4;
+}
+
+message ClosestPokemonSpawnInfo {
+  double unique_id_of_this_pokemon = 1;
+  uint64 timestamp_when_pokemon_first_appeared = 2; // TODO: needs validation
+  double latitude = 3;
+  double longitude = 4;
+  string not_sure5 = 5; // TODO: not sure what this is - same as not_sure1 in ClosestPokemonUnspawnInfo
+  int32 not_sure11 = 11; // TODO: not sure what this is
+
+  message PokedexNumber {
+    uint64 pokedex_number_of_pokemon = 2;
+  }
+  PokedexNumber pokedex_number = 7;
+}
+
+message ClosestPokemonUnspawnInfo {
+    string not_sure1 = 1; // TODO: not sure what this is - same as not_sure5 in ClosestPokemonSpawnInfo
+    double unique_id_of_this_pokemon = 2;
+    uint64 pokedex_number_of_pokemon = 3;
+    uint64 timestamp_when_pokemon_will_disappear = 4;
+    double latitude = 5;
+    double longitude = 6;
+}
+
+message Pokemon {
+  uint64 pokedex_number_of_pokemon = 1;
+  float how_far_away_pokemon_is_in_meters = 2; // TODO: needs validation
+  double unique_id_of_this_pokemon = 3;
+}
+
+message NotSure {
+  double latitude = 2;
+  double longitude = 3;
+}

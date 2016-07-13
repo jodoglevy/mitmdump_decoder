@@ -1,0 +1,69 @@
+
+ø
+fortdetails.protoPGo"Ñ
+FortDetailsOutProto
+id (	Rid
+name (	Rname
+	image_url (	RimageUrl
+
+isPokeStop	 (R
+isPokeStop
+lat
+ (Rlat
+long (Rlong 
+description (	Rdescription1
+lure (2.PGo.FortDetailsOutProto.LureRlure^
+Lure
+	something (R	something
+
+expiration (R
+expiration
+trainer (	Rtrainer"H
+FortDetailsProto
+id (	Rid
+lat (Rlat
+long (Rlong"q
+FortSearchProto
+id (	Rid
+lat (Rlat
+long (Rlong
+lat2 (Rlat2
+long2 (Rlong2"µ
+FortSearchOutProto
+success (Rsuccess6
+result (2.PGo.FortSearchOutProto.ResultRresultM
+Result
+ts1 (Rts1
+ts2 (Rts2
+items (2	.PGo.ItemRitems"$
+Item
+	timestamp (R	timestamp"æ
+Gym*
+details (2.PGo.Gym.DetailsRdetails
+name (	Rname
+	image_url (	RimageUrl
+team (Rteam 
+description (	RdescriptionË
+Details6
+details (2.PGo.Gym.Details.MoreDetailsRdetails.
+levels (2.PGo.Gym.Details.LevelRlevels}
+MoreDetails
+id (	Rid
+	timestamp (R	timestamp
+lat (Rlat
+long (Rlong
+prestige
+ (RprestigeØ
+Level8
+pokemon (2.PGo.Gym.Details.Level.PokemonRpokemon8
+trainer (2.PGo.Gym.Details.Level.TrainerRtrainer¥
+Pokemon
+cp (Rcp$
+currentHealth (RcurrentHealth
+	maxHealth (R	maxHealth
+trainer	 (	Rtrainer
+id (Rid
+	timestmap (R	timestmap3
+Trainer
+name (	Rname
+level (Rlevelbproto3
