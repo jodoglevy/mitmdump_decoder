@@ -40,6 +40,15 @@ message Thing {
 }
 
 message RpcRequestEnvelopeProto {
+  message AuthInfo {
+    string provider = 1;
+    JWT token = 2;
+
+    message JWT {
+      string contents = 1;
+    }
+  }
+
   Direction direction = 1;
   uint64 request_id = 3;
 
@@ -49,6 +58,7 @@ message RpcRequestEnvelopeProto {
   double lat = 7;
   double long = 8;
   double altitude = 9;
+  AuthInfo auth = 10;
 
   Thing thing = 11;
 
