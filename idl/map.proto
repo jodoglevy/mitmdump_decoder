@@ -26,7 +26,7 @@ message Tile {
 
   uint64 current_timestamp = 2;
   repeated Fort forts = 3;
-  repeated Location location4 = 4; // TODO: not sure what this represents
+  repeated Location grass = 4; // TODO: not sure what this represents
 
   // The closest pokemon, if it is within 2 "steps" or closer. This pokemon will NOT also be in pokemon_in_area
   repeated PokemonSpawnStart spawn_start = 5;
