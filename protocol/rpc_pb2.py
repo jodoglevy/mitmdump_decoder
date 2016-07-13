@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='rpc.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xe2\x01\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*\xa2\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\r\n\tTIMESTAMP\x10\x04\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xe2\x01\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*\x93\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -39,62 +39,58 @@ _TYPE = _descriptor.EnumDescriptor(
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='TIMESTAMP', index=2, number=4,
+      name='FORT_SEARCH', index=2, number=101,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='FORT_SEARCH', index=3, number=101,
+      name='CATCH_POKEMON', index=3, number=103,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CATCH_POKEMON', index=4, number=103,
+      name='FORT_DETAILS', index=4, number=104,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='FORT_DETAILS', index=5, number=104,
+      name='GET_MAP_OBJECTS', index=5, number=106,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='GET_MAP_OBJECTS', index=6, number=106,
+      name='GET_PLAYER_PROFILE', index=6, number=121,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='GET_PLAYER_PROFILE', index=7, number=121,
+      name='GET_GYM_DETAILS', index=7, number=134,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='GET_GYM_DETAILS', index=8, number=134,
+      name='USE_INCENSE', index=8, number=141,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='USE_INCENSE', index=9, number=141,
+      name='INCENSE_ENCOUNTER', index=9, number=143,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='INCENSE_ENCOUNTER', index=10, number=143,
+      name='GET_DOWNLOAD_URLS', index=10, number=301,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='GET_DOWNLOAD_URLS', index=11, number=301,
+      name='SFIDA_ACTION_LOG', index=11, number=801,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='SFIDA_ACTION_LOG', index=12, number=801,
+      name='DELIM1', index=12, number=126,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DELIM1', index=13, number=126,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DELIM2', index=14, number=129,
+      name='DELIM2', index=13, number=129,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=569,
-  serialized_end=859,
+  serialized_end=844,
 )
 _sym_db.RegisterEnumDescriptor(_TYPE)
 
@@ -120,15 +116,14 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=861,
-  serialized_end=912,
+  serialized_start=846,
+  serialized_end=897,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
 Direction = enum_type_wrapper.EnumTypeWrapper(_DIRECTION)
 METHOD_UNSET = 0
 GET_PLAYER = 2
-TIMESTAMP = 4
 FORT_SEARCH = 101
 CATCH_POKEMON = 103
 FORT_DETAILS = 104
