@@ -20,6 +20,8 @@ message MapObjectsResponse {
 }
 
 // A tile is a geographical "zone" containing objects like pokemon, gyms, and pokestops
+//http://s2map.com/#order=latlng&mode=polygon&s2=false&points=
+//https://code.google.com/archive/p/s2-geometry-library/
 message Tile {
   uint64 id = 1;
   uint64 current_timestamp = 2;

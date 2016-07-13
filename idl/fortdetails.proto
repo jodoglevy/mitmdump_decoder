@@ -67,10 +67,16 @@ message Gym {
         uint64 cp = 3;
         uint64 currentHealth = 4;
         uint64 maxHealth = 5;
+        uint64 moveOne = 6;
+        uint64 moveTwo = 7;
         string trainer = 9;
-        uint64 id = 22;
-        uint64 timestmap = 26;
+        float height = 15;
+        float weight = 16;
+        uint64 CapturedS2CellId = 22;
+        uint64 CreationTimeMs = 26;
+        string nickname = 30;
       }
+
       message Trainer {
         string name = 1;
         uint64 level = 2;
