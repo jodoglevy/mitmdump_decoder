@@ -1,5 +1,5 @@
 
-ø
+ž
 fortdetails.protoPGo"Ñ
 FortDetailsOutProto
 id (	Rid
@@ -37,13 +37,13 @@ expiration
 ts2 (Rts2
 items (2	.PGo.ItemRitems"$
 Item
-	timestamp (R	timestamp"æ
+	timestamp (R	timestamp"Œ
 Gym*
 details (2.PGo.Gym.DetailsRdetails
 name (	Rname
 	image_url (	RimageUrl
 team (Rteam 
-description (	RdescriptionË
+description (	Rdescriptionñ
 Details6
 details (2.PGo.Gym.Details.MoreDetailsRdetails.
 levels (2.PGo.Gym.Details.LevelRlevels}
@@ -53,17 +53,22 @@ expiration
 lat (Rlat
 long (Rlong
 prestige
- (RprestigeØ
+ (Rprestigeþ
 Level8
 pokemon (2.PGo.Gym.Details.Level.PokemonRpokemon8
-trainer (2.PGo.Gym.Details.Level.TrainerRtrainer¥
+trainer (2.PGo.Gym.Details.Level.TrainerRtrainerË
 Pokemon
 cp (Rcp$
 currentHealth (RcurrentHealth
 	maxHealth (R	maxHealth
-trainer	 (	Rtrainer
-id (Rid
-	timestmap (R	timestmap3
+moveOne (RmoveOne
+moveTwo (RmoveTwo
+trainer	 (	Rtrainer
+height (Rheight
+weight (Rweight*
+CapturedS2CellId (RcapturedS2CellId&
+CreationTimeMs (RcreationTimeMs
+nickname (	Rnickname3
 Trainer
 name (	Rname
 level (Rlevelbproto3
