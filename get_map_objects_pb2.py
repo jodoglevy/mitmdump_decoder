@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='get_map_objects.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\x15get_map_objects.proto\x12\x03PGo\"a\n\x11MapObjectsRequest\x12\x1f\n\x0c\x63\x65ll_request\x18\x01 \x01(\x0b\x32\t.PGo.Cell\x12\x10\n\x08unknown2\x18\x02 \x01(\x0c\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\"+\n\x04\x43\x65ll\x12\x11\n\x05typea\x18\x80\x80\x80\xc0\x01 \x03(\x04\x12\x10\n\x05typeb\x18\x80\x80\x80@ \x03(\x04\x62\x06proto3')
+  serialized_pb=_b('\n\x15get_map_objects.proto\x12\x03PGo\"a\n\x11MapObjectsRequest\x12\x1f\n\x0c\x63\x65ll_request\x18\x01 \x01(\x0b\x32\t.PGo.Cell\x12\x10\n\x08unknown2\x18\x02 \x01(\x0c\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\"+\n\x04\x43\x65ll\x12\x11\n\x05typea\x18\x80\x80\x80\xc0\x01 \x03(\x04\x12\x10\n\x05typeb\x18\x80\x80\x80@ \x03(\x04\".\n\x12MapObjectsResponse\x12\x18\n\x05tiles\x18\x01 \x03(\x0b\x32\t.PGo.Tile\"\xa0\x01\n\x04Tile\x12\x13\n\x0bmap_tile_id\x18\x01 \x01(\x04\x12\x11\n\ttimestmap\x18\x02 \x01(\x04\x12\x1f\n\x06\x66orts3\x18\x03 \x03(\x0b\x32\x0f.PGo.FortDetail\x12\x19\n\x06\x66orts4\x18\x04 \x03(\x0b\x32\t.PGo.Fort\x12\x19\n\x06\x66orts5\x18\x05 \x03(\x0b\x32\t.PGo.Fort\x12\x19\n\x06\x66orts9\x18\t \x03(\x0b\x32\t.PGo.Fort\"\x80\x01\n\nFortDetail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\x12\x12\n\nisPokestop\x18\t \x01(\x08\x12\x0f\n\x07resetTs\x18\x0e \x01(\x04\x12\x13\n\x0bgymPrestige\x18\n \x01(\x04\"!\n\x04\x46ort\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -115,9 +115,226 @@ _CELL = _descriptor.Descriptor(
   serialized_end=172,
 )
 
+
+_MAPOBJECTSRESPONSE = _descriptor.Descriptor(
+  name='MapObjectsResponse',
+  full_name='PGo.MapObjectsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tiles', full_name='PGo.MapObjectsResponse.tiles', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=174,
+  serialized_end=220,
+)
+
+
+_TILE = _descriptor.Descriptor(
+  name='Tile',
+  full_name='PGo.Tile',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='map_tile_id', full_name='PGo.Tile.map_tile_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='timestmap', full_name='PGo.Tile.timestmap', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='forts3', full_name='PGo.Tile.forts3', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='forts4', full_name='PGo.Tile.forts4', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='forts5', full_name='PGo.Tile.forts5', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='forts9', full_name='PGo.Tile.forts9', index=5,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=223,
+  serialized_end=383,
+)
+
+
+_FORTDETAIL = _descriptor.Descriptor(
+  name='FortDetail',
+  full_name='PGo.FortDetail',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='PGo.FortDetail.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='PGo.FortDetail.timestamp', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='lat', full_name='PGo.FortDetail.lat', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='long', full_name='PGo.FortDetail.long', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='isPokestop', full_name='PGo.FortDetail.isPokestop', index=4,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='resetTs', full_name='PGo.FortDetail.resetTs', index=5,
+      number=14, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gymPrestige', full_name='PGo.FortDetail.gymPrestige', index=6,
+      number=10, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=386,
+  serialized_end=514,
+)
+
+
+_FORT = _descriptor.Descriptor(
+  name='Fort',
+  full_name='PGo.Fort',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='lat', full_name='PGo.Fort.lat', index=0,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='long', full_name='PGo.Fort.long', index=1,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=516,
+  serialized_end=549,
+)
+
 _MAPOBJECTSREQUEST.fields_by_name['cell_request'].message_type = _CELL
+_MAPOBJECTSRESPONSE.fields_by_name['tiles'].message_type = _TILE
+_TILE.fields_by_name['forts3'].message_type = _FORTDETAIL
+_TILE.fields_by_name['forts4'].message_type = _FORT
+_TILE.fields_by_name['forts5'].message_type = _FORT
+_TILE.fields_by_name['forts9'].message_type = _FORT
 DESCRIPTOR.message_types_by_name['MapObjectsRequest'] = _MAPOBJECTSREQUEST
 DESCRIPTOR.message_types_by_name['Cell'] = _CELL
+DESCRIPTOR.message_types_by_name['MapObjectsResponse'] = _MAPOBJECTSRESPONSE
+DESCRIPTOR.message_types_by_name['Tile'] = _TILE
+DESCRIPTOR.message_types_by_name['FortDetail'] = _FORTDETAIL
+DESCRIPTOR.message_types_by_name['Fort'] = _FORT
 
 MapObjectsRequest = _reflection.GeneratedProtocolMessageType('MapObjectsRequest', (_message.Message,), dict(
   DESCRIPTOR = _MAPOBJECTSREQUEST,
@@ -132,6 +349,34 @@ Cell = _reflection.GeneratedProtocolMessageType('Cell', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:PGo.Cell)
   ))
 _sym_db.RegisterMessage(Cell)
+
+MapObjectsResponse = _reflection.GeneratedProtocolMessageType('MapObjectsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _MAPOBJECTSRESPONSE,
+  __module__ = 'get_map_objects_pb2'
+  # @@protoc_insertion_point(class_scope:PGo.MapObjectsResponse)
+  ))
+_sym_db.RegisterMessage(MapObjectsResponse)
+
+Tile = _reflection.GeneratedProtocolMessageType('Tile', (_message.Message,), dict(
+  DESCRIPTOR = _TILE,
+  __module__ = 'get_map_objects_pb2'
+  # @@protoc_insertion_point(class_scope:PGo.Tile)
+  ))
+_sym_db.RegisterMessage(Tile)
+
+FortDetail = _reflection.GeneratedProtocolMessageType('FortDetail', (_message.Message,), dict(
+  DESCRIPTOR = _FORTDETAIL,
+  __module__ = 'get_map_objects_pb2'
+  # @@protoc_insertion_point(class_scope:PGo.FortDetail)
+  ))
+_sym_db.RegisterMessage(FortDetail)
+
+Fort = _reflection.GeneratedProtocolMessageType('Fort', (_message.Message,), dict(
+  DESCRIPTOR = _FORT,
+  __module__ = 'get_map_objects_pb2'
+  # @@protoc_insertion_point(class_scope:PGo.Fort)
+  ))
+_sym_db.RegisterMessage(Fort)
 
 
 # @@protoc_insertion_point(module_scope)

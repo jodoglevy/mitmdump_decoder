@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='envelope.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\x0e\x65nvelope.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xe2\x01\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05*\xa2\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\r\n\tTIMESTAMP\x10\x04\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x0e\x65nvelope.proto\x12\x03PGo\"6\n\rMapFieldEntry\x12\x16\n\x03key\x18\x01 \x01(\x0e\x32\t.PGo.Type\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xe2\x01\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*\xa2\x02\n\x04Type\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x0e\n\nGET_PLAYER\x10\x02\x12\r\n\tTIMESTAMP\x10\x04\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\n\n\x06\x44\x45LIM1\x10~\x12\x0b\n\x06\x44\x45LIM2\x10\x81\x01*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -93,8 +93,8 @@ _TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=365,
-  serialized_end=655,
+  serialized_start=574,
+  serialized_end=864,
 )
 _sym_db.RegisterEnumDescriptor(_TYPE)
 
@@ -120,8 +120,8 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=657,
-  serialized_end=708,
+  serialized_start=866,
+  serialized_end=917,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
@@ -316,13 +316,103 @@ _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
   serialized_end=362,
 )
 
+
+_RPCRESPONSEENVELOPEPROTO = _descriptor.Descriptor(
+  name='RpcResponseEnvelopeProto',
+  full_name='PGo.RpcResponseEnvelopeProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='direction', full_name='PGo.RpcResponseEnvelopeProto.direction', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='response_id', full_name='PGo.RpcResponseEnvelopeProto.response_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='footer', full_name='PGo.RpcResponseEnvelopeProto.footer', index=2,
+      number=6, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='lat', full_name='PGo.RpcResponseEnvelopeProto.lat', index=3,
+      number=7, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='long', full_name='PGo.RpcResponseEnvelopeProto.long', index=4,
+      number=8, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='altitude', full_name='PGo.RpcResponseEnvelopeProto.altitude', index=5,
+      number=9, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='thing', full_name='PGo.RpcResponseEnvelopeProto.thing', index=6,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unknown12', full_name='PGo.RpcResponseEnvelopeProto.unknown12', index=7,
+      number=12, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='returns', full_name='PGo.RpcResponseEnvelopeProto.returns', index=8,
+      number=100, type=12, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=365,
+  serialized_end=571,
+)
+
 _MAPFIELDENTRY.fields_by_name['key'].enum_type = _TYPE
 _RPCREQUESTENVELOPEPROTO.fields_by_name['direction'].enum_type = _DIRECTION
 _RPCREQUESTENVELOPEPROTO.fields_by_name['parameter'].message_type = _MAPFIELDENTRY
 _RPCREQUESTENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
+_RPCRESPONSEENVELOPEPROTO.fields_by_name['direction'].enum_type = _DIRECTION
+_RPCRESPONSEENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
 DESCRIPTOR.message_types_by_name['MapFieldEntry'] = _MAPFIELDENTRY
 DESCRIPTOR.message_types_by_name['Thing'] = _THING
 DESCRIPTOR.message_types_by_name['RpcRequestEnvelopeProto'] = _RPCREQUESTENVELOPEPROTO
+DESCRIPTOR.message_types_by_name['RpcResponseEnvelopeProto'] = _RPCRESPONSEENVELOPEPROTO
 DESCRIPTOR.enum_types_by_name['Type'] = _TYPE
 DESCRIPTOR.enum_types_by_name['Direction'] = _DIRECTION
 
@@ -346,6 +436,13 @@ RpcRequestEnvelopeProto = _reflection.GeneratedProtocolMessageType('RpcRequestEn
   # @@protoc_insertion_point(class_scope:PGo.RpcRequestEnvelopeProto)
   ))
 _sym_db.RegisterMessage(RpcRequestEnvelopeProto)
+
+RpcResponseEnvelopeProto = _reflection.GeneratedProtocolMessageType('RpcResponseEnvelopeProto', (_message.Message,), dict(
+  DESCRIPTOR = _RPCRESPONSEENVELOPEPROTO,
+  __module__ = 'envelope_pb2'
+  # @@protoc_insertion_point(class_scope:PGo.RpcResponseEnvelopeProto)
+  ))
+_sym_db.RegisterMessage(RpcResponseEnvelopeProto)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -56,3 +56,18 @@ message RpcRequestEnvelopeProto {
 
   int32 unknown12 = 12;
 }
+
+message RpcResponseEnvelopeProto {
+  Direction direction = 1;
+  uint64 response_id = 2;
+
+  bytes footer = 6;
+  double lat = 7;
+  double long = 8;
+  double altitude = 9;
+
+  Thing thing = 11;
+
+  int32 unknown12 = 12;
+  repeated bytes returns = 100;
+}

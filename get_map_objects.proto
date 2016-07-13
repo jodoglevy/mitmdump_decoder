@@ -15,3 +15,31 @@ message Cell {
   repeated uint64 typeb = 134217728;
 }
 
+message MapObjectsResponse {
+  repeated Tile tiles = 1;
+}
+
+message Tile {
+  uint64 map_tile_id = 1;
+  uint64 timestmap = 2;
+  repeated FortDetail forts3 = 3;
+  repeated Fort forts4 = 4;
+  repeated Fort forts5 = 5;
+  repeated Fort forts9 = 9;
+}
+
+message FortDetail {
+  string id = 1;
+  uint64 timestamp = 2;
+  double lat = 3;
+  double long = 4;
+  bool isPokestop = 9;
+  uint64 resetTs = 14;
+  uint64 gymPrestige = 10;
+}
+
+message Fort {
+  double lat = 2;
+  double long = 3;
+}
+
