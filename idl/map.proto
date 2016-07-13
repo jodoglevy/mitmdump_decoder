@@ -78,7 +78,7 @@ message PokemonSpawnA {
   uint64 appeared_ts = 2; // TODO: needs validation
   double latitude = 3;
   double longitude = 4;
-  string not_sure5 = 5; // TODO: not sure what this is - same as not_sure1 in ClosestPokemonUnspawnInfo
+  string s2cell_token = 5; // TODO: not sure what this is - same as not_sure1 in ClosestPokemonUnspawnInfo
 
   message PokedexNumber {
     uint64 pokedex_number = 2;
@@ -89,7 +89,7 @@ message PokemonSpawnA {
 }
 
 message PokemonSpawnB {
-    string not_sure1 = 1; // TODO: not sure what this is - same as not_sure5 in ClosestPokemonSpawnInfo
+    string s2cell_token = 1;
     double uid = 2;
     uint64 pokedex_number = 3;
     uint64 expiry = 4;
