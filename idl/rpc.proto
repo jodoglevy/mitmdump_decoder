@@ -6,8 +6,6 @@ package PGo;
 enum Type {
   METHOD_UNSET = 0;
   GET_PLAYER = 2;
-  TIMESTAMP = 4;
-
   FORT_SEARCH = 101;
   //GET_PLAYER = 102;
   CATCH_POKEMON = 103;
