@@ -127,7 +127,15 @@ def response(context, flow):
               f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FF00FF", "marker-symbol": "town-hall", "marker-size": "large"})
+              f = None
+              if fort.Team == BLUE:
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+              elif fort.Team == RED:
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
+              elif fort.Team == YELLOW:
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
+              else:
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
@@ -142,7 +150,7 @@ def response(context, flow):
 
           for pokemon in cell.WildPokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"title": "Wild pokemon: %i" % pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "veterinary"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "Wild pokemon: %i" % pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "suitcase"})
             features.append(f)
 
           for pokemon in cell.CatchablePokemon:
@@ -158,16 +166,12 @@ def response(context, flow):
             else:
               pokeLocation[poke.EncounterId] = [(gps[0], gps[1], poke.DistanceMeters/1000)]
             if len(pokeLocation[poke.EncounterId]) >= 3:
-              try:
-                lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
+              lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
+              if not math.isnan(lat) and not math.isnan(lon) :
                 p = Point((lon, lat))
                 f = Feature(geometry=p, id=len(features), properties={"title": "nearby pokemon", "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
                 features.append(f)
 
-              except Exception as inst:
-                print type(inst)
-                print inst.args
-                print inst
 
         fc = FeatureCollection(features)
         dump = geojson.dumps(fc, sort_keys=True)
