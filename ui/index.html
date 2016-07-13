@@ -24,13 +24,8 @@ var map = L.mapbox.map('map', 'mapbox.streets').setView([45.5154685974, -122.682
 // http://en.wikipedia.org/wiki/Same_origin_policy
 // So the CSV file must be on the same domain as the Javascript, or the server
 // delivering it should support CORS.
-var featureLayer = L.mapbox.featureLayer().addTo(map);
-function repeat() {
-  console.log("refresh");
-  featureLayer.loadURL('get_map_objects.json');
-  setTimeout(repeat, 5000);
-}
-repeat();
+var featureLayer = L.mapbox.featureLayer().loadURL('get_map_objects.json').addTo(map);
+
 </script>
 
 
