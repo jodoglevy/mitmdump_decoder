@@ -86,7 +86,7 @@ def request(context, flow):
     request_api[env.request_id] = key
 
     if (key == GET_MAP_OBJECTS):
-      mor = MapObjectsRequest()
+      mor = GetMapObjectsProto()
       mor.ParseFromString(value)
       print(mor)
       request_location[env.request_id] = (env.lat,env.long)
@@ -114,54 +114,52 @@ def response(context, flow):
       value = env.returns[0]
 
       if (key == GET_MAP_OBJECTS):
-        mor = MapObjectsResponse()
+        mor = GetMapObjectsOutProto()
         mor.ParseFromString(value)
-        print("GET_MAP_OBJECTS %i tiles" % len(mor.tiles))
+        print("GET_MAP_OBJECTS %i cells" % len(mor.cells))
         features = []
 
-        for tile in mor.tiles:
-          print("S2 Cell %i" % tile.id)
-          for fort in tile.forts:
-            p = Point((fort.longitude, fort.latitude))
-            if fort.is_pokestop:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "00007F", "marker-symbol": "town-hall"})
+        for cell in mor.cells:
+          print("S2 Cell %i" % cell.S2CellId)
+          for fort in cell.Fort:
+            p = Point((fort.Longitude, fort.Latitude))
+            if fort.FortType == 1:
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "type": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "type": "gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
-          for fort in tile.location4:
-            p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4", "marker-color": "FFFF00", "marker-symbol": "monument"})
+          for spawn in cell.SpawnPoint:
+            p = Point((spawn.Longitude, spawn.Latitude))
+            f = Feature(geometry=p, id=len(features), properties={"type": "spawn", "marker-color": "00FF00", "marker-symbol": "garden"})
             features.append(f)
 
-          for fort in tile.location9:
-            p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location9", "marker-color": "00FFFF"})
+          for spawn in cell.DecimatedSpawnPoint:
+            p = Point((spawn.Longitude, spawn.Latitude))
+            f = Feature(geometry=p, id=len(features), properties={"type": "decimated spawn", "marker-color": "00FF00", "marker-symbol": "monument"})
             features.append(f)
 
-
-          #Make into a line
-          for fort in tile.spawn_start:
-            p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "spawn_start", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
+          for pokemon in cell.WildPokemon:
+            p = Point((pokemon.Longitude, pokemon.Latitude))
+            f = Feature(geometry=p, id=len(features), properties={"id": pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
             features.append(f)
 
-          for fort in tile.spawn_end:
-            p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "spawn_end", "marker-color": "00FF00", "marker-symbol": "circle"})
+          for pokemon in cell.CatchablePokemon:
+            p = Point((pokemon.Longitude, pokemon.Latitude))
+            f = Feature(geometry=p, id=len(features), properties={"id": pokemon.PokedexTypeId, "type": "catchable pokemon", "marker-color": "000000", "marker-symbol": "circle"})
             features.append(f)
 
-          for poke in tile.pokemon_in_area:
+          for poke in cell.NearbyPokemon:
             gps = request_location[env.response_id]
-            if poke.id in pokeLocation:
-              if gps[0] != pokeLocation[poke.id][0][0]:
-                pokeLocation[poke.id].append((gps[0], gps[1], poke.distance/1000))
+            if poke.EncounterId in pokeLocation:
+              if gps[0] != pokeLocation[poke.EncounterId][0][0]:
+                pokeLocation[poke.EncounterId].append((gps[0], gps[1], poke.DistanceMeters/1000))
             else:
-              pokeLocation[poke.id] = [(gps[0], gps[1], poke.distance/1000)]
-            if len(pokeLocation[poke.id]) >= 3:
+              pokeLocation[poke.EncounterId] = [(gps[0], gps[1], poke.DistanceMeters/1000)]
+            if len(pokeLocation[poke.EncounterId]) >= 3:
               try:
-                lat, lon = triangulate(pokeLocation[poke.id][0],pokeLocation[poke.id][1],pokeLocation[poke.id][2])
+                lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
                 p = Point((lon, lat))
                 f = Feature(geometry=p, id=len(features), properties={"type": "pokemon", "marker-color": "FFFFFF"})
                 features.append(f)
