@@ -137,7 +137,7 @@ def response(context, flow):
 
           for spawn in cell.DecimatedSpawnPoint:
             p = Point((spawn.Longitude, spawn.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"title": "decimated spawn", "marker-color": "FFFFFF", "marker-symbol": "monument"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "decimated spawn", "marker-color": "000000", "marker-symbol": "monument"})
             features.append(f)
 
           for pokemon in cell.WildPokemon:
@@ -161,7 +161,7 @@ def response(context, flow):
               try:
                 lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
                 p = Point((lon, lat))
-                f = Feature(geometry=p, id=len(features), properties={"type": "pokemon", "marker-color": "FFFFFF"})
+                f = Feature(geometry=p, id=len(features), properties={"title": "nearby pokemon", "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
                 features.append(f)
 
               except Exception as inst:
