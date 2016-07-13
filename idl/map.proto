@@ -21,18 +21,17 @@ message MapObjectsResponse {
 
 // A tile is a geographical "zone" containing objects like pokemon, gyms, and pokestops
 message Tile {
-  
   // S2 geographic area that the tile covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-  uint64 s2cell_token = 1;
+  uint64 id = 1;
 
   uint64 current_timestamp = 2;
   repeated Fort forts = 3;
   repeated Location location4 = 4; // TODO: not sure what this represents
 
   // The closest pokemon, if it is within 2 "steps" or closer. This pokemon will NOT also be in pokemon_in_area
-  repeated PokemonSpawnA close_pokemon_a = 5;
+  repeated PokemonSpawnStart spawn_start = 5;
   repeated Location location9 = 9; // TODO: not sure what this represents
-  repeated PokemonSpawnB close_pokemon_b = 10;
+  repeated PokemonSpawnEnd spawn_end = 10;
   repeated Pokemon pokemon_in_area = 11;
 }
 
@@ -74,12 +73,12 @@ message FortLureInfo {
   uint64 expiry_ts = 4; // when the lure will end
 }
 
-message PokemonSpawnA {
+message PokemonSpawnStart {
   double uid = 1;
   uint64 appeared_ts = 2; // TODO: needs validation, seems to be when the pokemon first appeared
   double latitude = 3;
   double longitude = 4;
-  
+
   // S2 geographic area that this pokemon is in (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
   string s2cell_token = 5;
 
@@ -91,8 +90,7 @@ message PokemonSpawnA {
   int32 not_sure11 = 11; // TODO: not sure what this is
 }
 
-message PokemonSpawnB {
-    
+message PokemonSpawnEnd {
     // S2 geographic area that this pokemon is in (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
     string s2cell_token = 1;
 
