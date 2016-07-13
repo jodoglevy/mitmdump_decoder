@@ -14,6 +14,8 @@ from google.protobuf.internal import enum_type_wrapper
 
 from envelope_pb2 import *
 from get_map_objects_pb2 import *
+from fort_details_pb2 import *
+
 
 associate = {} #Match responses to their requests
 
@@ -29,6 +31,10 @@ def request(context, flow):
 
     if (key == GET_MAP_OBJECTS):
       mor = MapObjectsRequest()
+      mor.ParseFromString(value)
+      print(mor)
+    elif (key == FORT_DETAILS):
+      mor = FortDetailsProto()
       mor.ParseFromString(value)
       print(mor)
     else:
@@ -50,6 +56,10 @@ def response(context, flow):
           print("%i forts(3) | %i forts(4) | %i forts(5) | %i forts(9)" % (len(tile.forts3), len(tile.forts4), len(tile.forts5), len(tile.forts9)))
           for fort in tile.forts3:
             print("%s: %f, %f" % (fort.id, fort.lat, fort.long))
+      elif (key == FORT_DETAILS):
+        mor = FortDetailsOutProto()
+        mor.ParseFromString(value)
+        print(mor)
       else:
         print("API: %s" % key)
 
