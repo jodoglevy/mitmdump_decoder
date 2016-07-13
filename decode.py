@@ -67,27 +67,27 @@ def response(context, flow):
           print("S2 Cell %i" % tile.id)
           for fort in tile.forts:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "0000FF"})
             features.append(f)
 
           for fort in tile.location4:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4"})
+            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4", "marker-color": "FFFF00"})
             features.append(f)
 
           for fort in tile.location9:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location9"})
+            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location9", "marker-color": "00FFFF"})
             features.append(f)
 
           for fort in tile.close_pokemon_a:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a", "marker-color": "FF0000"})
             features.append(f)
 
           for fort in tile.close_pokemon_b:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b", "marker-color": "00FF00"})
             features.append(f)
 
         fc = FeatureCollection(features)
