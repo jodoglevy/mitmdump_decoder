@@ -67,12 +67,16 @@ def response(context, flow):
           print("S2 Cell %i" % tile.id)
           for fort in tile.forts:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "0000FF"})
-            features.append(f)
+            if fort.is_pokestop:
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "00007F", "marker-symbol": "town-hall"})
+              features.append(f)
+            else:
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.id, "tile": tile.id, "type": "fort", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+              features.append(f)
 
           for fort in tile.location4:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4", "marker-color": "FFFF00"})
+            f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location4", "marker-color": "FFFF00", "marker-symbol": "monument"})
             features.append(f)
 
           for fort in tile.location9:
@@ -80,14 +84,16 @@ def response(context, flow):
             f = Feature(geometry=p, id=len(features), properties={"tile": tile.id, "type": "location9", "marker-color": "00FFFF"})
             features.append(f)
 
-          for fort in tile.close_pokemon_a:
+
+          #Make into a line
+          for fort in tile.spawn_start:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a", "marker-color": "FF0000"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
             features.append(f)
 
-          for fort in tile.close_pokemon_b:
+          for fort in tile.spawn_end:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b", "marker-color": "00FF00"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b", "marker-color": "00FF00", "marker-symbol": "circle"})
             features.append(f)
 
         fc = FeatureCollection(features)
