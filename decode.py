@@ -124,30 +124,30 @@ def response(context, flow):
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
             if fort.FortType == 1:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "type": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "type": "gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FF00FF", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
             p = Point((spawn.Longitude, spawn.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"type": "spawn", "marker-color": "00FF00", "marker-symbol": "garden"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "spawn", "marker-color": "00FF00", "marker-symbol": "garden"})
             features.append(f)
 
           for spawn in cell.DecimatedSpawnPoint:
             p = Point((spawn.Longitude, spawn.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"type": "decimated spawn", "marker-color": "00FF00", "marker-symbol": "monument"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "decimated spawn", "marker-color": "FFFFFF", "marker-symbol": "monument"})
             features.append(f)
 
           for pokemon in cell.WildPokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "Wild pokemon: %i" % pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "veterinary"})
             features.append(f)
 
           for pokemon in cell.CatchablePokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": pokemon.PokedexTypeId, "type": "catchable pokemon", "marker-color": "000000", "marker-symbol": "circle"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "Catchable pokemon: %i" % pokemon.PokedexTypeId, "type": "catchable pokemon", "marker-color": "000000", "marker-symbol": "circle"})
             features.append(f)
 
           for poke in cell.NearbyPokemon:
