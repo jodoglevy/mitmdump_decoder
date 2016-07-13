@@ -20,9 +20,9 @@ from protocol.map_pb2 import *
 from protocol.rpc_pb2 import *
 from protocol.fortdetails_pb2 import *
 
-associate = {} #Match responses to their requests
+request_api = {} #Match responses to their requests
 pokeLocation = {}
-requests = {}
+request_location = {}
 
 def triangulate((LatA, LonA, DistA), (LatB, LonB, DistB), (LatC, LonC, DistC)):
   #using authalic sphere
@@ -73,9 +73,9 @@ def triangulate((LatA, LonA, DistA), (LatB, LonB, DistB), (LatC, LonC, DistC)):
   lat = math.degrees(math.asin(triPt[2] / earthR))
   lon = math.degrees(math.atan2(triPt[1],triPt[0]))
 
-  return(str(lat) + "," + str(lon))
+  return (lat, lon)
 
-@concurrent  # Remove this and see what happens
+@concurrent
 def request(context, flow):
   if flow.match("~d pgorelease.nianticlabs.com"):
     env = RpcRequestEnvelopeProto()
@@ -83,15 +83,13 @@ def request(context, flow):
     key = env.parameter[0].key
     value = env.parameter[0].value
 
-    associate[env.request_id] = key
+    request_api[env.request_id] = key
 
     if (key == GET_MAP_OBJECTS):
       mor = MapObjectsRequest()
       mor.ParseFromString(value)
       print(mor)
-      requests[env.request_id] = (env.lat,env.long)
-      print("Requests are:")
-      print(requests)
+      request_location[env.request_id] = (env.lat,env.long)
     elif (key == FORT_DETAILS):
       mor = FortDetailsProto()
       mor.ParseFromString(value)
@@ -112,7 +110,7 @@ def response(context, flow):
     if flow.match("~d pgorelease.nianticlabs.com"):
       env = RpcResponseEnvelopeProto()
       env.ParseFromString(flow.response.content)
-      key = associate[env.response_id]
+      key = request_api[env.response_id]
       value = env.returns[0]
 
       if (key == GET_MAP_OBJECTS):
@@ -146,29 +144,28 @@ def response(context, flow):
           #Make into a line
           for fort in tile.spawn_start:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_a", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "spawn_start", "marker-color": "FF0000", "marker-symbol": "circle-stroked"})
             features.append(f)
 
           for fort in tile.spawn_end:
             p = Point((fort.longitude, fort.latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "close_pokemon_b", "marker-color": "00FF00", "marker-symbol": "circle"})
+            f = Feature(geometry=p, id=len(features), properties={"id": fort.uid, "tile": tile.id, "type": "spawn_end", "marker-color": "00FF00", "marker-symbol": "circle"})
             features.append(f)
 
           for poke in tile.pokemon_in_area:
-            gps = requests[env.response_id]
-            print(poke.distance)
+            gps = request_location[env.response_id]
             if poke.id in pokeLocation:
               if gps[0] != pokeLocation[poke.id][0][0]:
                 pokeLocation[poke.id].append((gps[0], gps[1], poke.distance/1000))
             else:
               pokeLocation[poke.id] = [(gps[0], gps[1], poke.distance/1000)]
-            print(pokeLocation[poke.id])
             if len(pokeLocation[poke.id]) >= 3:
-              print("Got three values")
-              print(poke.pokedex)
               try:
-                nums = triangulate(pokeLocation[poke.id][0],pokeLocation[poke.id][1],pokeLocation[poke.id][2])
-                print nums
+                lat, lon = triangulate(pokeLocation[poke.id][0],pokeLocation[poke.id][1],pokeLocation[poke.id][2])
+                p = Point((lon, lat))
+                f = Feature(geometry=p, id=len(features), properties={"type": "pokemon", "marker-color": "FFFFFF"})
+                features.append(f)
+
               except Exception as inst:
                 print type(inst)
                 print inst.args
