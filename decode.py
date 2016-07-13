@@ -98,7 +98,7 @@ def response(context, flow):
 
         fc = FeatureCollection(features)
         dump = geojson.dumps(fc, sort_keys=True)
-        f = open('get_map_objects.json', 'w')
+        f = open('ui/get_map_objects.json', 'w')
         f.write(dump)
       elif (key == FORT_DETAILS):
         mor = FortDetailsOutProto()
