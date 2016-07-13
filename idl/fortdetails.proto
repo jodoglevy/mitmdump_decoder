@@ -6,8 +6,17 @@ package PGo;
 message FortDetailsOutProto {
   string id = 1;
   string name = 4;
-  string description = 12;
   string image_url = 5;
+  bool isPokeStop = 9;
+  double lat = 10;
+  double long = 11;
+  string description = 12;
+  message Lure {
+    uint32 something = 1;
+    uint64 expiration = 2;
+    string trainer = 3;
+  }
+  Lure lure = 13;
 }
 
 message FortDetailsProto {
@@ -42,3 +51,42 @@ message Item {
   //Stuff nested under '3'
 }
 
+
+message Gym {
+  message Details {
+    message MoreDetails {
+      string id = 1;
+      uint64 timestamp = 2;
+      double lat = 3;
+      double long = 4;
+      //5, 6, 8
+      uint64 prestige = 10;
+    }
+    message Level {
+      message Pokemon {
+        uint64 cp = 3;
+        uint64 currentHealth = 4;
+        uint64 maxHealth = 5;
+        string trainer = 9;
+        uint64 id = 22;
+        uint64 timestmap = 26;
+      }
+      message Trainer {
+        string name = 1;
+        uint64 level = 2;
+      }
+
+      Pokemon pokemon = 1;
+      Trainer trainer = 2;
+    }
+
+    MoreDetails details = 1;
+    repeated Level levels = 2;
+  }
+
+  Details details = 1;
+  string name = 2;
+  string image_url = 3;
+  uint64 team = 4;
+  string description = 5;
+}
