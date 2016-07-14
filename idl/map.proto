@@ -21,7 +21,7 @@ message GetMapObjectsOutProto {
 // A cell is a geographical "zone" containing objects like pokemon, gyms, and pokestops
 message ClientMapCellProto {
 	
-	// S2 geographic area that the tile covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
+	// S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
 	uint64 S2CellId = 1;
 
 	// current timestamp
@@ -44,7 +44,7 @@ message ClientMapCellProto {
 
 // A "fort" is the internal name for a gym or pokestop point of interest
 message PokemonFortProto {
-	int32 FortId = 1;
+	string FortId = 1;
 	int32 LastModifiedMs = 2;
 	double Latitude = 3;
 	double Longitude = 4;
@@ -70,12 +70,25 @@ message PokemonFortProto {
 		// If true, this is a pokestop
 		bool FortType = 9;
 
-		// TODO - this doesn't seem right -- i thought lure info was a subobject?
-		int32 ActiveFortModifier = 12;
-		PokemonName ActivePokemon = 13;
+		// Timestamp when the pokestop can be activated again to get items / xp
 		int32 CooldownCompleteMs = 14;
+
+		// Not sure what these are, but "Sponsor" sure is interesting...
+		// Decompilation did not make it clear if these should go under FortLureInfoProto or PokemonFortProto directly 
 		int32 Sponsor = 15;
 		int32 RenderingType = 16;
+
+		// Might represent the type of item applied to the pokestop, right only lures can be applied
+		bytes ActiveFortModifier = 12;
+
+		// Decompilation did not produce this nested proto correctly, so manually created FortLureInfoProto based on wire sniffing and used/added it here
+		message FortLureInfoProto {
+		  string FortId = 1;
+		  double NotSure2 = 2;
+		  PokemonName ActivePokemon = 3;
+		  int32 LureExpiryMs = 4;
+		}
+		FortLureInfoProto FortLureInfo = 13;
 }
 
 message PokemonSummaryFortProto {
@@ -88,19 +101,25 @@ message PokemonSummaryFortProto {
 message NearbyPokemonProto {
 	PokemonName PokedexNumber = 1;
 	float DistanceMeters = 2;
-	int32 EncounterId = 3;
+	double EncounterId = 3;
 }
 
 message WildPokemonProto {
-	int32 EncounterId = 1;
+	double EncounterId = 1;
 	int32 LastModifiedMs = 2;
 	double Latitude = 3;
 	double Longitude = 4;
 
 	// S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-	int32 SpawnPointId = 5;
+	string SpawnPointId = 5;
 
-	PokemonName Pokemon = 7;
+	// Decompilation did not produce this nested proto correctly, so manually created PokemonInfoProto based on wire sniffing and used/added it here
+	message PokemonInfoProto {
+    	PokemonName Pokemon = 2;
+  }
+	PokemonInfoProto PokemonInfo = 7;
+
+	// The amount of time before the pokemon will be gone
 	int32 TimeTillHiddenMs = 11;
 }
 
@@ -112,11 +131,14 @@ message ClientSpawnPointProto {
 message MapPokemonProto {
 	
 	// S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-	int32 SpawnpointId = 1;
+	string SpawnpointId = 1;
 
-	int32 EncounterId = 2;
+	double EncounterId = 2;
 	PokemonName PokedexTypeId = 3;
+
+	// After this timestamp, the pokemon will be gone
 	int32 ExpirationTimeMs = 4;
+
 	double Latitude = 5;
 	double Longitude = 6;
 }

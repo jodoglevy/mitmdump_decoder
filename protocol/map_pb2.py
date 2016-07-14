@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='map.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\tmap.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"_\n\x12GetMapObjectsProto\x12\x0e\n\x06\x43\x65llId\x18\x01 \x01(\x05\x12\x13\n\x0bSinceTimeMs\x18\x02 \x01(\x05\x12\x11\n\tPlayerLat\x18\x03 \x01(\x01\x12\x11\n\tPlayerLng\x18\x04 \x01(\x01\"O\n\x15GetMapObjectsOutProto\x12&\n\x05\x63\x65lls\x18\x01 \x03(\x0b\x32\x17.PGo.ClientMapCellProto\x12\x0e\n\x06Status\x18\x02 \x01(\x05\"\xb7\x03\n\x12\x43lientMapCellProto\x12\x10\n\x08S2CellId\x18\x01 \x01(\x04\x12\x12\n\nAsOfTimeMs\x18\x02 \x01(\x05\x12#\n\x04\x46ort\x18\x03 \x03(\x0b\x32\x15.PGo.PokemonFortProto\x12.\n\nSpawnPoint\x18\x04 \x03(\x0b\x32\x1a.PGo.ClientSpawnPointProto\x12\x15\n\rDeletedObject\x18\x06 \x01(\x08\x12\x17\n\x0fIsTruncatedList\x18\x07 \x01(\x08\x12\x31\n\x0b\x46ortSummary\x18\x08 \x03(\x0b\x32\x1c.PGo.PokemonSummaryFortProto\x12\x37\n\x13\x44\x65\x63imatedSpawnPoint\x18\t \x03(\x0b\x32\x1a.PGo.ClientSpawnPointProto\x12.\n\rNearbyPokemon\x18\x0b \x03(\x0b\x32\x17.PGo.NearbyPokemonProto\x12*\n\x0bWildPokemon\x18\x05 \x03(\x0b\x32\x15.PGo.WildPokemonProto\x12.\n\x10\x43\x61tchablePokemon\x18\n \x03(\x0b\x32\x14.PGo.MapPokemonProto\"\x95\x03\n\x10PokemonFortProto\x12\x0e\n\x06\x46ortId\x18\x01 \x01(\x05\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\x12\x0f\n\x07\x45nabled\x18\x08 \x01(\x08\x12\x1c\n\x04Team\x18\x05 \x01(\x0e\x32\x0e.PGo.TeamColor\x12(\n\x0eGuardPokemonId\x18\x06 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x19\n\x11GuardPokemonLevel\x18\x07 \x01(\x05\x12\x11\n\tGymPoints\x18\n \x01(\x05\x12\x12\n\nIsInBattle\x18\x0b \x01(\x08\x12\x10\n\x08\x46ortType\x18\t \x01(\x08\x12\x1a\n\x12\x41\x63tiveFortModifier\x18\x0c \x01(\x05\x12\'\n\rActivePokemon\x18\r \x01(\x0e\x32\x10.PGo.PokemonName\x12\x1a\n\x12\x43ooldownCompleteMs\x18\x0e \x01(\x05\x12\x0f\n\x07Sponsor\x18\x0f \x01(\x05\x12\x15\n\rRenderingType\x18\x10 \x01(\x05\"m\n\x17PokemonSummaryFortProto\x12\x15\n\rFortSummaryId\x18\x01 \x01(\x05\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\"j\n\x12NearbyPokemonProto\x12\'\n\rPokedexNumber\x18\x01 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x16\n\x0e\x44istanceMeters\x18\x02 \x01(\x02\x12\x13\n\x0b\x45ncounterId\x18\x03 \x01(\x05\"\xb7\x01\n\x10WildPokemonProto\x12\x13\n\x0b\x45ncounterId\x18\x01 \x01(\x05\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\x12\x14\n\x0cSpawnPointId\x18\x05 \x01(\x05\x12!\n\x07Pokemon\x18\x07 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x18\n\x10TimeTillHiddenMs\x18\x0b \x01(\x05\"<\n\x15\x43lientSpawnPointProto\x12\x10\n\x08Latitude\x18\x02 \x01(\x01\x12\x11\n\tLongitude\x18\x03 \x01(\x01\"\xa4\x01\n\x0fMapPokemonProto\x12\x14\n\x0cSpawnpointId\x18\x01 \x01(\x05\x12\x13\n\x0b\x45ncounterId\x18\x02 \x01(\x05\x12\'\n\rPokedexTypeId\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x18\n\x10\x45xpirationTimeMs\x18\x04 \x01(\x05\x12\x10\n\x08Latitude\x18\x05 \x01(\x01\x12\x11\n\tLongitude\x18\x06 \x01(\x01P\x00\x62\x06proto3')
+  serialized_pb=_b('\n\tmap.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"_\n\x12GetMapObjectsProto\x12\x0e\n\x06\x43\x65llId\x18\x01 \x01(\x05\x12\x13\n\x0bSinceTimeMs\x18\x02 \x01(\x05\x12\x11\n\tPlayerLat\x18\x03 \x01(\x01\x12\x11\n\tPlayerLng\x18\x04 \x01(\x01\"O\n\x15GetMapObjectsOutProto\x12&\n\x05\x63\x65lls\x18\x01 \x03(\x0b\x32\x17.PGo.ClientMapCellProto\x12\x0e\n\x06Status\x18\x02 \x01(\x05\"\xb7\x03\n\x12\x43lientMapCellProto\x12\x10\n\x08S2CellId\x18\x01 \x01(\x04\x12\x12\n\nAsOfTimeMs\x18\x02 \x01(\x05\x12#\n\x04\x46ort\x18\x03 \x03(\x0b\x32\x15.PGo.PokemonFortProto\x12.\n\nSpawnPoint\x18\x04 \x03(\x0b\x32\x1a.PGo.ClientSpawnPointProto\x12\x15\n\rDeletedObject\x18\x06 \x01(\x08\x12\x17\n\x0fIsTruncatedList\x18\x07 \x01(\x08\x12\x31\n\x0b\x46ortSummary\x18\x08 \x03(\x0b\x32\x1c.PGo.PokemonSummaryFortProto\x12\x37\n\x13\x44\x65\x63imatedSpawnPoint\x18\t \x03(\x0b\x32\x1a.PGo.ClientSpawnPointProto\x12.\n\rNearbyPokemon\x18\x0b \x03(\x0b\x32\x17.PGo.NearbyPokemonProto\x12*\n\x0bWildPokemon\x18\x05 \x03(\x0b\x32\x15.PGo.WildPokemonProto\x12.\n\x10\x43\x61tchablePokemon\x18\n \x03(\x0b\x32\x14.PGo.MapPokemonProto\"\xa1\x04\n\x10PokemonFortProto\x12\x0e\n\x06\x46ortId\x18\x01 \x01(\t\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\x12\x0f\n\x07\x45nabled\x18\x08 \x01(\x08\x12\x1c\n\x04Team\x18\x05 \x01(\x0e\x32\x0e.PGo.TeamColor\x12(\n\x0eGuardPokemonId\x18\x06 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x19\n\x11GuardPokemonLevel\x18\x07 \x01(\x05\x12\x11\n\tGymPoints\x18\n \x01(\x05\x12\x12\n\nIsInBattle\x18\x0b \x01(\x08\x12\x10\n\x08\x46ortType\x18\t \x01(\x08\x12\x1a\n\x12\x43ooldownCompleteMs\x18\x0e \x01(\x05\x12\x0f\n\x07Sponsor\x18\x0f \x01(\x05\x12\x15\n\rRenderingType\x18\x10 \x01(\x05\x12\x1a\n\x12\x41\x63tiveFortModifier\x18\x0c \x01(\x0c\x12=\n\x0c\x46ortLureInfo\x18\r \x01(\x0b\x32\'.PGo.PokemonFortProto.FortLureInfoProto\x1at\n\x11\x46ortLureInfoProto\x12\x0e\n\x06\x46ortId\x18\x01 \x01(\t\x12\x10\n\x08NotSure2\x18\x02 \x01(\x01\x12\'\n\rActivePokemon\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x14\n\x0cLureExpiryMs\x18\x04 \x01(\x05\"m\n\x17PokemonSummaryFortProto\x12\x15\n\rFortSummaryId\x18\x01 \x01(\x05\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\"j\n\x12NearbyPokemonProto\x12\'\n\rPokedexNumber\x18\x01 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x16\n\x0e\x44istanceMeters\x18\x02 \x01(\x02\x12\x13\n\x0b\x45ncounterId\x18\x03 \x01(\x01\"\x88\x02\n\x10WildPokemonProto\x12\x13\n\x0b\x45ncounterId\x18\x01 \x01(\x01\x12\x16\n\x0eLastModifiedMs\x18\x02 \x01(\x05\x12\x10\n\x08Latitude\x18\x03 \x01(\x01\x12\x11\n\tLongitude\x18\x04 \x01(\x01\x12\x14\n\x0cSpawnPointId\x18\x05 \x01(\t\x12;\n\x0bPokemonInfo\x18\x07 \x01(\x0b\x32&.PGo.WildPokemonProto.PokemonInfoProto\x12\x18\n\x10TimeTillHiddenMs\x18\x0b \x01(\x05\x1a\x35\n\x10PokemonInfoProto\x12!\n\x07Pokemon\x18\x02 \x01(\x0e\x32\x10.PGo.PokemonName\"<\n\x15\x43lientSpawnPointProto\x12\x10\n\x08Latitude\x18\x02 \x01(\x01\x12\x11\n\tLongitude\x18\x03 \x01(\x01\"\xa4\x01\n\x0fMapPokemonProto\x12\x14\n\x0cSpawnpointId\x18\x01 \x01(\t\x12\x13\n\x0b\x45ncounterId\x18\x02 \x01(\x01\x12\'\n\rPokedexTypeId\x18\x03 \x01(\x0e\x32\x10.PGo.PokemonName\x12\x18\n\x10\x45xpirationTimeMs\x18\x04 \x01(\x05\x12\x10\n\x08Latitude\x18\x05 \x01(\x01\x12\x11\n\tLongitude\x18\x06 \x01(\x01P\x00\x62\x06proto3')
   ,
   dependencies=[holoholo__shared__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -220,6 +220,57 @@ _CLIENTMAPCELLPROTO = _descriptor.Descriptor(
 )
 
 
+_POKEMONFORTPROTO_FORTLUREINFOPROTO = _descriptor.Descriptor(
+  name='FortLureInfoProto',
+  full_name='PGo.PokemonFortProto.FortLureInfoProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='FortId', full_name='PGo.PokemonFortProto.FortLureInfoProto.FortId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='NotSure2', full_name='PGo.PokemonFortProto.FortLureInfoProto.NotSure2', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ActivePokemon', full_name='PGo.PokemonFortProto.FortLureInfoProto.ActivePokemon', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='LureExpiryMs', full_name='PGo.PokemonFortProto.FortLureInfoProto.LureExpiryMs', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1091,
+  serialized_end=1207,
+)
+
 _POKEMONFORTPROTO = _descriptor.Descriptor(
   name='PokemonFortProto',
   full_name='PGo.PokemonFortProto',
@@ -229,8 +280,8 @@ _POKEMONFORTPROTO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='FortId', full_name='PGo.PokemonFortProto.FortId', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -305,44 +356,44 @@ _POKEMONFORTPROTO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ActiveFortModifier', full_name='PGo.PokemonFortProto.ActiveFortModifier', index=11,
-      number=12, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ActivePokemon', full_name='PGo.PokemonFortProto.ActivePokemon', index=12,
-      number=13, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='CooldownCompleteMs', full_name='PGo.PokemonFortProto.CooldownCompleteMs', index=13,
+      name='CooldownCompleteMs', full_name='PGo.PokemonFortProto.CooldownCompleteMs', index=11,
       number=14, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Sponsor', full_name='PGo.PokemonFortProto.Sponsor', index=14,
+      name='Sponsor', full_name='PGo.PokemonFortProto.Sponsor', index=12,
       number=15, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='RenderingType', full_name='PGo.PokemonFortProto.RenderingType', index=15,
+      name='RenderingType', full_name='PGo.PokemonFortProto.RenderingType', index=13,
       number=16, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ActiveFortModifier', full_name='PGo.PokemonFortProto.ActiveFortModifier', index=14,
+      number=12, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='FortLureInfo', full_name='PGo.PokemonFortProto.FortLureInfo', index=15,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_POKEMONFORTPROTO_FORTLUREINFOPROTO, ],
   enum_types=[
   ],
   options=None,
@@ -352,7 +403,7 @@ _POKEMONFORTPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=662,
-  serialized_end=1067,
+  serialized_end=1207,
 )
 
 
@@ -403,8 +454,8 @@ _POKEMONSUMMARYFORTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1178,
+  serialized_start=1209,
+  serialized_end=1318,
 )
 
 
@@ -431,7 +482,38 @@ _NEARBYPOKEMONPROTO = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='EncounterId', full_name='PGo.NearbyPokemonProto.EncounterId', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1320,
+  serialized_end=1426,
+)
+
+
+_WILDPOKEMONPROTO_POKEMONINFOPROTO = _descriptor.Descriptor(
+  name='PokemonInfoProto',
+  full_name='PGo.WildPokemonProto.PokemonInfoProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Pokemon', full_name='PGo.WildPokemonProto.PokemonInfoProto.Pokemon', index=0,
+      number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -448,10 +530,9 @@ _NEARBYPOKEMONPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1286,
+  serialized_start=1640,
+  serialized_end=1693,
 )
-
 
 _WILDPOKEMONPROTO = _descriptor.Descriptor(
   name='WildPokemonProto',
@@ -462,8 +543,8 @@ _WILDPOKEMONPROTO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='EncounterId', full_name='PGo.WildPokemonProto.EncounterId', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -490,15 +571,15 @@ _WILDPOKEMONPROTO = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='SpawnPointId', full_name='PGo.WildPokemonProto.SpawnPointId', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='Pokemon', full_name='PGo.WildPokemonProto.Pokemon', index=5,
-      number=7, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='PokemonInfo', full_name='PGo.WildPokemonProto.PokemonInfo', index=5,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -512,7 +593,7 @@ _WILDPOKEMONPROTO = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_WILDPOKEMONPROTO_POKEMONINFOPROTO, ],
   enum_types=[
   ],
   options=None,
@@ -521,8 +602,8 @@ _WILDPOKEMONPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1289,
-  serialized_end=1472,
+  serialized_start=1429,
+  serialized_end=1693,
 )
 
 
@@ -559,8 +640,8 @@ _CLIENTSPAWNPOINTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1534,
+  serialized_start=1695,
+  serialized_end=1755,
 )
 
 
@@ -573,15 +654,15 @@ _MAPPOKEMONPROTO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='SpawnpointId', full_name='PGo.MapPokemonProto.SpawnpointId', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='EncounterId', full_name='PGo.MapPokemonProto.EncounterId', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -625,8 +706,8 @@ _MAPPOKEMONPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1537,
-  serialized_end=1701,
+  serialized_start=1758,
+  serialized_end=1922,
 )
 
 _GETMAPOBJECTSOUTPROTO.fields_by_name['cells'].message_type = _CLIENTMAPCELLPROTO
@@ -637,11 +718,15 @@ _CLIENTMAPCELLPROTO.fields_by_name['DecimatedSpawnPoint'].message_type = _CLIENT
 _CLIENTMAPCELLPROTO.fields_by_name['NearbyPokemon'].message_type = _NEARBYPOKEMONPROTO
 _CLIENTMAPCELLPROTO.fields_by_name['WildPokemon'].message_type = _WILDPOKEMONPROTO
 _CLIENTMAPCELLPROTO.fields_by_name['CatchablePokemon'].message_type = _MAPPOKEMONPROTO
+_POKEMONFORTPROTO_FORTLUREINFOPROTO.fields_by_name['ActivePokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_POKEMONFORTPROTO_FORTLUREINFOPROTO.containing_type = _POKEMONFORTPROTO
 _POKEMONFORTPROTO.fields_by_name['Team'].enum_type = holoholo__shared__pb2._TEAMCOLOR
 _POKEMONFORTPROTO.fields_by_name['GuardPokemonId'].enum_type = holoholo__shared__pb2._POKEMONNAME
-_POKEMONFORTPROTO.fields_by_name['ActivePokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_POKEMONFORTPROTO.fields_by_name['FortLureInfo'].message_type = _POKEMONFORTPROTO_FORTLUREINFOPROTO
 _NEARBYPOKEMONPROTO.fields_by_name['PokedexNumber'].enum_type = holoholo__shared__pb2._POKEMONNAME
-_WILDPOKEMONPROTO.fields_by_name['Pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_WILDPOKEMONPROTO_POKEMONINFOPROTO.fields_by_name['Pokemon'].enum_type = holoholo__shared__pb2._POKEMONNAME
+_WILDPOKEMONPROTO_POKEMONINFOPROTO.containing_type = _WILDPOKEMONPROTO
+_WILDPOKEMONPROTO.fields_by_name['PokemonInfo'].message_type = _WILDPOKEMONPROTO_POKEMONINFOPROTO
 _MAPPOKEMONPROTO.fields_by_name['PokedexTypeId'].enum_type = holoholo__shared__pb2._POKEMONNAME
 DESCRIPTOR.message_types_by_name['GetMapObjectsProto'] = _GETMAPOBJECTSPROTO
 DESCRIPTOR.message_types_by_name['GetMapObjectsOutProto'] = _GETMAPOBJECTSOUTPROTO
@@ -675,11 +760,19 @@ ClientMapCellProto = _reflection.GeneratedProtocolMessageType('ClientMapCellProt
 _sym_db.RegisterMessage(ClientMapCellProto)
 
 PokemonFortProto = _reflection.GeneratedProtocolMessageType('PokemonFortProto', (_message.Message,), dict(
+
+  FortLureInfoProto = _reflection.GeneratedProtocolMessageType('FortLureInfoProto', (_message.Message,), dict(
+    DESCRIPTOR = _POKEMONFORTPROTO_FORTLUREINFOPROTO,
+    __module__ = 'map_pb2'
+    # @@protoc_insertion_point(class_scope:PGo.PokemonFortProto.FortLureInfoProto)
+    ))
+  ,
   DESCRIPTOR = _POKEMONFORTPROTO,
   __module__ = 'map_pb2'
   # @@protoc_insertion_point(class_scope:PGo.PokemonFortProto)
   ))
 _sym_db.RegisterMessage(PokemonFortProto)
+_sym_db.RegisterMessage(PokemonFortProto.FortLureInfoProto)
 
 PokemonSummaryFortProto = _reflection.GeneratedProtocolMessageType('PokemonSummaryFortProto', (_message.Message,), dict(
   DESCRIPTOR = _POKEMONSUMMARYFORTPROTO,
@@ -696,11 +789,19 @@ NearbyPokemonProto = _reflection.GeneratedProtocolMessageType('NearbyPokemonProt
 _sym_db.RegisterMessage(NearbyPokemonProto)
 
 WildPokemonProto = _reflection.GeneratedProtocolMessageType('WildPokemonProto', (_message.Message,), dict(
+
+  PokemonInfoProto = _reflection.GeneratedProtocolMessageType('PokemonInfoProto', (_message.Message,), dict(
+    DESCRIPTOR = _WILDPOKEMONPROTO_POKEMONINFOPROTO,
+    __module__ = 'map_pb2'
+    # @@protoc_insertion_point(class_scope:PGo.WildPokemonProto.PokemonInfoProto)
+    ))
+  ,
   DESCRIPTOR = _WILDPOKEMONPROTO,
   __module__ = 'map_pb2'
   # @@protoc_insertion_point(class_scope:PGo.WildPokemonProto)
   ))
 _sym_db.RegisterMessage(WildPokemonProto)
+_sym_db.RegisterMessage(WildPokemonProto.PokemonInfoProto)
 
 ClientSpawnPointProto = _reflection.GeneratedProtocolMessageType('ClientSpawnPointProto', (_message.Message,), dict(
   DESCRIPTOR = _CLIENTSPAWNPOINTPROTO,
