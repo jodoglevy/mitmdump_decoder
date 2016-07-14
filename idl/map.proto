@@ -58,11 +58,11 @@ message PokemonSummaryFortProto {
 message NearbyPokemonProto {
   Custom_PokemonName PokedexNumber = 1;
   float DistanceMeters = 2;
-  double EncounterId = 3;
+  uint64 EncounterId = 3;
 }
 
 message WildPokemonProto {
-  double EncounterId = 1;
+  uint64 EncounterId = 1;
   int64 LastModifiedMs = 2;
   double Latitude = 3;
   double Longitude = 4;
@@ -85,7 +85,7 @@ message MapPokemonProto {
   // S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
   string SpawnPointId = 1;
 
-  double EncounterId = 2;
+  uint64 EncounterId = 2;
   Custom_PokemonName PokedexTypeId = 3;
 
   // After this timestamp, the pokemon will be gone
