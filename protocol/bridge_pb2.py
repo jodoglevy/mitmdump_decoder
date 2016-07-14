@@ -18,8 +18,8 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='bridge.proto',
   package='',
-  syntax='proto2',
-  serialized_pb=_b('\n\x0c\x62ridge.proto')
+  syntax='proto3',
+  serialized_pb=_b('\n\x0c\x62ridge.protob\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

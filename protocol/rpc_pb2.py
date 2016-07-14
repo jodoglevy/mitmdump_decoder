@@ -14,14 +14,17 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+import holoholo_shared_pb2 as holoholo__shared__pb2
 
+from holoholo_shared_pb2 import *
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rpc.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\"\xd1\x0c\n\x08Holoholo\x1a\xc4\x0c\n\x03Rpc\"\xbc\x0c\n\x06Method\x12\x10\n\x0cMETHOD_UNSET\x10\x00\x12\x11\n\rPLAYER_UPDATE\x10\x01\x12\x0e\n\nGET_PLAYER\x10\x02\x12\x11\n\rGET_INVENTORY\x10\x04\x12\x15\n\x11\x44OWNLOAD_SETTINGS\x10\x05\x12\x1b\n\x17\x44OWNLOAD_ITEM_TEMPLATES\x10\x06\x12\"\n\x1e\x44OWNLOAD_REMOTE_CONFIG_VERSION\x10\x07\x12\x0f\n\x0b\x46ORT_SEARCH\x10\x65\x12\r\n\tENCOUNTER\x10\x66\x12\x11\n\rCATCH_POKEMON\x10g\x12\x10\n\x0c\x46ORT_DETAILS\x10h\x12\x0c\n\x08ITEM_USE\x10i\x12\x13\n\x0fGET_MAP_OBJECTS\x10j\x12\x17\n\x13\x46ORT_DEPLOY_POKEMON\x10n\x12\x17\n\x13\x46ORT_RECALL_POKEMON\x10o\x12\x13\n\x0fRELEASE_POKEMON\x10p\x12\x13\n\x0fUSE_ITEM_POTION\x10q\x12\x14\n\x10USE_ITEM_CAPTURE\x10r\x12\x11\n\rUSE_ITEM_FLEE\x10s\x12\x13\n\x0fUSE_ITEM_REVIVE\x10t\x12\x10\n\x0cTRADE_SEARCH\x10u\x12\x0f\n\x0bTRADE_OFFER\x10v\x12\x12\n\x0eTRADE_RESPONSE\x10w\x12\x10\n\x0cTRADE_RESULT\x10x\x12\x16\n\x12GET_PLAYER_PROFILE\x10y\x12\x11\n\rGET_ITEM_PACK\x10z\x12\x11\n\rBUY_ITEM_PACK\x10{\x12\x10\n\x0c\x42UY_GEM_PACK\x10|\x12\x12\n\x0e\x45VOLVE_POKEMON\x10}\x12\x14\n\x10GET_HATCHED_EGGS\x10~\x12\x1f\n\x1b\x45NCOUNTER_TUTORIAL_COMPLETE\x10\x7f\x12\x15\n\x10LEVEL_UP_REWARDS\x10\x80\x01\x12\x19\n\x14\x43HECK_AWARDED_BADGES\x10\x81\x01\x12\x11\n\x0cUSE_ITEM_GYM\x10\x85\x01\x12\x14\n\x0fGET_GYM_DETAILS\x10\x86\x01\x12\x15\n\x10START_GYM_BATTLE\x10\x87\x01\x12\x0f\n\nATTACK_GYM\x10\x88\x01\x12\x1b\n\x16RECYCLE_INVENTORY_ITEM\x10\x89\x01\x12\x18\n\x13\x43OLLECT_DAILY_BONUS\x10\x8a\x01\x12\x16\n\x11USE_ITEM_XP_BOOST\x10\x8b\x01\x12\x1b\n\x16USE_ITEM_EGG_INCUBATOR\x10\x8c\x01\x12\x10\n\x0bUSE_INCENSE\x10\x8d\x01\x12\x18\n\x13GET_INCENSE_POKEMON\x10\x8e\x01\x12\x16\n\x11INCENSE_ENCOUNTER\x10\x8f\x01\x12\x16\n\x11\x41\x44\x44_FORT_MODIFIER\x10\x90\x01\x12\x13\n\x0e\x44ISK_ENCOUNTER\x10\x91\x01\x12!\n\x1c\x43OLLECT_DAILY_DEFENDER_BONUS\x10\x92\x01\x12\x14\n\x0fUPGRADE_POKEMON\x10\x93\x01\x12\x19\n\x14SET_FAVORITE_POKEMON\x10\x94\x01\x12\x15\n\x10NICKNAME_POKEMON\x10\x95\x01\x12\x10\n\x0b\x45QUIP_BADGE\x10\x96\x01\x12\x19\n\x14SET_CONTACT_SETTINGS\x10\x97\x01\x12\x15\n\x10GET_ASSET_DIGEST\x10\xac\x02\x12\x16\n\x11GET_DOWNLOAD_URLS\x10\xad\x02\x12\x1c\n\x17GET_SUGGESTED_CODENAMES\x10\x91\x03\x12\x1d\n\x18\x43HECK_CODENAME_AVAILABLE\x10\x92\x03\x12\x13\n\x0e\x43LAIM_CODENAME\x10\x93\x03\x12\x0f\n\nSET_AVATAR\x10\x94\x03\x12\x14\n\x0fSET_PLAYER_TEAM\x10\x95\x03\x12\x1b\n\x16MARK_TUTORIAL_COMPLETE\x10\x96\x03\x12\x16\n\x11LOAD_SPAWN_POINTS\x10\xf4\x03\x12\t\n\x04\x45\x43HO\x10\x9a\x05\x12\x1b\n\x16\x44\x45\x42UG_UPDATE_INVENTORY\x10\xbc\x05\x12\x18\n\x13\x44\x45\x42UG_DELETE_PLAYER\x10\xbd\x05\x12\x17\n\x12SFIDA_REGISTRATION\x10\xa0\x06\x12\x15\n\x10SFIDA_ACTION_LOG\x10\xa1\x06\x12\x18\n\x13SFIDA_CERTIFICATION\x10\xa2\x06\x12\x11\n\x0cSFIDA_UPDATE\x10\xa3\x06\x12\x11\n\x0cSFIDA_ACTION\x10\xa4\x06\x12\x11\n\x0cSFIDA_DOWSER\x10\xa5\x06\x12\x12\n\rSFIDA_CAPTURE\x10\xa6\x06\"E\n\rMapFieldEntry\x12%\n\x03key\x18\x01 \x01(\x0e\x32\x18.PGo.Holoholo.Rpc.Method\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\x88\x03\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x33\n\x04\x61uth\x18\n \x01(\x0b\x32%.PGo.RpcRequestEnvelopeProto.AuthInfo\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x1ao\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x38\n\x05token\x18\x02 \x01(\x0b\x32).PGo.RpcRequestEnvelopeProto.AuthInfo.JWT\x1a\x17\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02\x62\x06proto3')
-)
+  serialized_pb=_b('\n\trpc.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"E\n\rMapFieldEntry\x12%\n\x03key\x18\x01 \x01(\x0e\x32\x18.PGo.Holoholo.Rpc.Method\x12\r\n\x05value\x18\x02 \x01(\x0c\"6\n\x05Thing\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\x88\x03\n\x17RpcRequestEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12%\n\tparameter\x18\x04 \x03(\x0b\x32\x12.PGo.MapFieldEntry\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x33\n\x04\x61uth\x18\n \x01(\x0b\x32%.PGo.RpcRequestEnvelopeProto.AuthInfo\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x1ao\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x38\n\x05token\x18\x02 \x01(\x0b\x32).PGo.RpcRequestEnvelopeProto.AuthInfo.JWT\x1a\x17\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"\xce\x01\n\x18RpcResponseEnvelopeProto\x12!\n\tdirection\x18\x01 \x01(\x0e\x32\x0e.PGo.Direction\x12\x13\n\x0bresponse_id\x18\x02 \x01(\x04\x12\x0e\n\x06\x66ooter\x18\x06 \x01(\x0c\x12\x0b\n\x03lat\x18\x07 \x01(\x01\x12\x0c\n\x04long\x18\x08 \x01(\x01\x12\x10\n\x08\x61ltitude\x18\t \x01(\x01\x12\x19\n\x05thing\x18\x0b \x01(\x0b\x32\n.PGo.Thing\x12\x11\n\tunknown12\x18\x0c \x01(\x05\x12\x0f\n\x07returns\x18\x64 \x03(\x0c*3\n\tDirection\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08RESPONSE\x10\x01\x12\x0b\n\x07REQUEST\x10\x02P\x00\x62\x06proto3')
+  ,
+  dependencies=[holoholo__shared__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _DIRECTION = _descriptor.EnumDescriptor(
@@ -45,8 +48,8 @@ _DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2369,
-  serialized_end=2420,
+  serialized_start=772,
+  serialized_end=823,
 )
 _sym_db.RegisterEnumDescriptor(_DIRECTION)
 
@@ -55,352 +58,6 @@ UNKNOWN = 0
 RESPONSE = 1
 REQUEST = 2
 
-
-_HOLOHOLO_RPC_METHOD = _descriptor.EnumDescriptor(
-  name='Method',
-  full_name='PGo.Holoholo.Rpc.Method',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='METHOD_UNSET', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='PLAYER_UPDATE', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_PLAYER', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_INVENTORY', index=3, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DOWNLOAD_SETTINGS', index=4, number=5,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DOWNLOAD_ITEM_TEMPLATES', index=5, number=6,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DOWNLOAD_REMOTE_CONFIG_VERSION', index=6, number=7,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FORT_SEARCH', index=7, number=101,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ENCOUNTER', index=8, number=102,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CATCH_POKEMON', index=9, number=103,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FORT_DETAILS', index=10, number=104,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ITEM_USE', index=11, number=105,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_MAP_OBJECTS', index=12, number=106,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FORT_DEPLOY_POKEMON', index=13, number=110,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FORT_RECALL_POKEMON', index=14, number=111,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RELEASE_POKEMON', index=15, number=112,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_POTION', index=16, number=113,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_CAPTURE', index=17, number=114,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_FLEE', index=18, number=115,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_REVIVE', index=19, number=116,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TRADE_SEARCH', index=20, number=117,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TRADE_OFFER', index=21, number=118,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TRADE_RESPONSE', index=22, number=119,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TRADE_RESULT', index=23, number=120,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_PLAYER_PROFILE', index=24, number=121,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_ITEM_PACK', index=25, number=122,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BUY_ITEM_PACK', index=26, number=123,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BUY_GEM_PACK', index=27, number=124,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EVOLVE_POKEMON', index=28, number=125,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_HATCHED_EGGS', index=29, number=126,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ENCOUNTER_TUTORIAL_COMPLETE', index=30, number=127,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='LEVEL_UP_REWARDS', index=31, number=128,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CHECK_AWARDED_BADGES', index=32, number=129,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_GYM', index=33, number=133,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_GYM_DETAILS', index=34, number=134,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='START_GYM_BATTLE', index=35, number=135,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ATTACK_GYM', index=36, number=136,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RECYCLE_INVENTORY_ITEM', index=37, number=137,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='COLLECT_DAILY_BONUS', index=38, number=138,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_XP_BOOST', index=39, number=139,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_ITEM_EGG_INCUBATOR', index=40, number=140,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='USE_INCENSE', index=41, number=141,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_INCENSE_POKEMON', index=42, number=142,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='INCENSE_ENCOUNTER', index=43, number=143,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ADD_FORT_MODIFIER', index=44, number=144,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DISK_ENCOUNTER', index=45, number=145,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='COLLECT_DAILY_DEFENDER_BONUS', index=46, number=146,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='UPGRADE_POKEMON', index=47, number=147,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SET_FAVORITE_POKEMON', index=48, number=148,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='NICKNAME_POKEMON', index=49, number=149,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='EQUIP_BADGE', index=50, number=150,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SET_CONTACT_SETTINGS', index=51, number=151,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_ASSET_DIGEST', index=52, number=300,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_DOWNLOAD_URLS', index=53, number=301,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GET_SUGGESTED_CODENAMES', index=54, number=401,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CHECK_CODENAME_AVAILABLE', index=55, number=402,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CLAIM_CODENAME', index=56, number=403,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SET_AVATAR', index=57, number=404,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SET_PLAYER_TEAM', index=58, number=405,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='MARK_TUTORIAL_COMPLETE', index=59, number=406,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='LOAD_SPAWN_POINTS', index=60, number=500,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ECHO', index=61, number=666,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DEBUG_UPDATE_INVENTORY', index=62, number=700,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DEBUG_DELETE_PLAYER', index=63, number=701,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_REGISTRATION', index=64, number=800,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_ACTION_LOG', index=65, number=801,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_CERTIFICATION', index=66, number=802,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_UPDATE', index=67, number=803,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_ACTION', index=68, number=804,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_DOWSER', index=69, number=805,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SFIDA_CAPTURE', index=70, number=806,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=40,
-  serialized_end=1636,
-)
-_sym_db.RegisterEnumDescriptor(_HOLOHOLO_RPC_METHOD)
-
-
-_HOLOHOLO_RPC = _descriptor.Descriptor(
-  name='Rpc',
-  full_name='PGo.Holoholo.Rpc',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _HOLOHOLO_RPC_METHOD,
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=32,
-  serialized_end=1636,
-)
-
-_HOLOHOLO = _descriptor.Descriptor(
-  name='Holoholo',
-  full_name='PGo.Holoholo',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[_HOLOHOLO_RPC, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=19,
-  serialized_end=1636,
-)
 
 
 _MAPFIELDENTRY = _descriptor.Descriptor(
@@ -436,8 +93,8 @@ _MAPFIELDENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1638,
-  serialized_end=1707,
+  serialized_start=41,
+  serialized_end=110,
 )
 
 
@@ -481,8 +138,8 @@ _THING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1763,
+  serialized_start=112,
+  serialized_end=166,
 )
 
 
@@ -512,8 +169,8 @@ _RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2135,
-  serialized_end=2158,
+  serialized_start=538,
+  serialized_end=561,
 )
 
 _RPCREQUESTENVELOPEPROTO_AUTHINFO = _descriptor.Descriptor(
@@ -549,8 +206,8 @@ _RPCREQUESTENVELOPEPROTO_AUTHINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2047,
-  serialized_end=2158,
+  serialized_start=450,
+  serialized_end=561,
 )
 
 _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
@@ -642,8 +299,8 @@ _RPCREQUESTENVELOPEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1766,
-  serialized_end=2158,
+  serialized_start=169,
+  serialized_end=561,
 )
 
 
@@ -729,13 +386,11 @@ _RPCRESPONSEENVELOPEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2161,
-  serialized_end=2367,
+  serialized_start=564,
+  serialized_end=770,
 )
 
-_HOLOHOLO_RPC.containing_type = _HOLOHOLO
-_HOLOHOLO_RPC_METHOD.containing_type = _HOLOHOLO_RPC
-_MAPFIELDENTRY.fields_by_name['key'].enum_type = _HOLOHOLO_RPC_METHOD
+_MAPFIELDENTRY.fields_by_name['key'].enum_type = holoholo__shared__pb2._HOLOHOLO_RPC_METHOD
 _RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT.containing_type = _RPCREQUESTENVELOPEPROTO_AUTHINFO
 _RPCREQUESTENVELOPEPROTO_AUTHINFO.fields_by_name['token'].message_type = _RPCREQUESTENVELOPEPROTO_AUTHINFO_JWT
 _RPCREQUESTENVELOPEPROTO_AUTHINFO.containing_type = _RPCREQUESTENVELOPEPROTO
@@ -745,27 +400,11 @@ _RPCREQUESTENVELOPEPROTO.fields_by_name['auth'].message_type = _RPCREQUESTENVELO
 _RPCREQUESTENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
 _RPCRESPONSEENVELOPEPROTO.fields_by_name['direction'].enum_type = _DIRECTION
 _RPCRESPONSEENVELOPEPROTO.fields_by_name['thing'].message_type = _THING
-DESCRIPTOR.message_types_by_name['Holoholo'] = _HOLOHOLO
 DESCRIPTOR.message_types_by_name['MapFieldEntry'] = _MAPFIELDENTRY
 DESCRIPTOR.message_types_by_name['Thing'] = _THING
 DESCRIPTOR.message_types_by_name['RpcRequestEnvelopeProto'] = _RPCREQUESTENVELOPEPROTO
 DESCRIPTOR.message_types_by_name['RpcResponseEnvelopeProto'] = _RPCRESPONSEENVELOPEPROTO
 DESCRIPTOR.enum_types_by_name['Direction'] = _DIRECTION
-
-Holoholo = _reflection.GeneratedProtocolMessageType('Holoholo', (_message.Message,), dict(
-
-  Rpc = _reflection.GeneratedProtocolMessageType('Rpc', (_message.Message,), dict(
-    DESCRIPTOR = _HOLOHOLO_RPC,
-    __module__ = 'rpc_pb2'
-    # @@protoc_insertion_point(class_scope:PGo.Holoholo.Rpc)
-    ))
-  ,
-  DESCRIPTOR = _HOLOHOLO,
-  __module__ = 'rpc_pb2'
-  # @@protoc_insertion_point(class_scope:PGo.Holoholo)
-  ))
-_sym_db.RegisterMessage(Holoholo)
-_sym_db.RegisterMessage(Holoholo.Rpc)
 
 MapFieldEntry = _reflection.GeneratedProtocolMessageType('MapFieldEntry', (_message.Message,), dict(
   DESCRIPTOR = _MAPFIELDENTRY,

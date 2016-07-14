@@ -163,3 +163,210 @@ enum Custom_PokemonName {
   MEWTWO = 150;
   MEW = 151;
 }
+
+message Holoholo {
+  message Rpc {
+    enum Method {
+      METHOD_UNSET = 0;
+      PLAYER_UPDATE = 1;
+      GET_PLAYER = 2;
+      GET_INVENTORY = 4;
+      DOWNLOAD_SETTINGS = 5;
+      DOWNLOAD_ITEM_TEMPLATES = 6;
+      DOWNLOAD_REMOTE_CONFIG_VERSION = 7;
+      FORT_SEARCH = 101;
+      ENCOUNTER = 102;
+      CATCH_POKEMON = 103;
+      FORT_DETAILS = 104;
+      ITEM_USE = 105;
+      GET_MAP_OBJECTS = 106;
+      FORT_DEPLOY_POKEMON = 110;
+      FORT_RECALL_POKEMON = 111;
+      RELEASE_POKEMON = 112;
+      USE_ITEM_POTION = 113;
+      USE_ITEM_CAPTURE = 114;
+      USE_ITEM_FLEE = 115;
+      USE_ITEM_REVIVE = 116;
+      TRADE_SEARCH = 117;
+      TRADE_OFFER = 118;
+      TRADE_RESPONSE = 119;
+      TRADE_RESULT = 120;
+      GET_PLAYER_PROFILE = 121;
+      GET_ITEM_PACK = 122;
+      BUY_ITEM_PACK = 123;
+      BUY_GEM_PACK = 124;
+      EVOLVE_POKEMON = 125;
+      GET_HATCHED_EGGS = 126;
+      ENCOUNTER_TUTORIAL_COMPLETE = 127;
+      LEVEL_UP_REWARDS = 128;
+      CHECK_AWARDED_BADGES = 129;
+      USE_ITEM_GYM = 133;
+      GET_GYM_DETAILS = 134;
+      START_GYM_BATTLE = 135;
+      ATTACK_GYM = 136;
+      RECYCLE_INVENTORY_ITEM = 137;
+      COLLECT_DAILY_BONUS = 138;
+      USE_ITEM_XP_BOOST = 139;
+      USE_ITEM_EGG_INCUBATOR = 140;
+      USE_INCENSE = 141;
+      GET_INCENSE_POKEMON = 142;
+      INCENSE_ENCOUNTER = 143;
+      ADD_FORT_MODIFIER = 144;
+      DISK_ENCOUNTER = 145;
+      COLLECT_DAILY_DEFENDER_BONUS = 146;
+      UPGRADE_POKEMON = 147;
+      SET_FAVORITE_POKEMON = 148;
+      NICKNAME_POKEMON = 149;
+      EQUIP_BADGE = 150;
+      SET_CONTACT_SETTINGS = 151;
+      GET_ASSET_DIGEST = 300;
+      GET_DOWNLOAD_URLS = 301;
+      GET_SUGGESTED_CODENAMES = 401;
+      CHECK_CODENAME_AVAILABLE = 402;
+      CLAIM_CODENAME = 403;
+      SET_AVATAR = 404;
+      SET_PLAYER_TEAM = 405;
+      MARK_TUTORIAL_COMPLETE = 406;
+      LOAD_SPAWN_POINTS = 500;
+      ECHO = 666;
+      DEBUG_UPDATE_INVENTORY = 700;
+      DEBUG_DELETE_PLAYER = 701;
+      SFIDA_REGISTRATION = 800;
+      SFIDA_ACTION_LOG = 801;
+      SFIDA_CERTIFICATION = 802;
+      SFIDA_UPDATE = 803;
+      SFIDA_ACTION = 804;
+      SFIDA_DOWSER = 805;
+      SFIDA_CAPTURE = 806;
+    }
+    enum FortType {
+      GYM = 0;
+      CHECKPOINT = 1; //Pokestop
+    }
+    enum Item {
+      ITEM_UNKNOWN = 0;
+      ITEM_POKE_BALL = 1;
+      ITEM_GREAT_BALL = 2;
+      ITEM_ULTRA_BALL = 3;
+      ITEM_MASTER_BALL = 4;
+      ITEM_POTION = 101;
+      ITEM_SUPER_POTION = 102;
+      ITEM_HYPER_POTION = 103;
+      ITEM_MAX_POTION = 104;
+      ITEM_REVIVE = 201;
+      ITEM_MAX_REVIVE = 202;
+      ITEM_LUCKY_EGG = 301;
+      ITEM_INCENSE_ORDINARY = 401;
+      ITEM_INCENSE_SPICY = 402;
+      ITEM_INCENSE_COOL = 403;
+      ITEM_INCENSE_FLORAL = 404;
+      ITEM_TROY_DISK = 501;
+      ITEM_X_ATTACK = 602;
+      ITEM_X_DEFENSE = 603;
+      ITEM_X_MIRACLE = 604;
+      ITEM_RAZZ_BERRY = 701;
+      ITEM_BLUK_BERRY = 702;
+      ITEM_NANAB_BERRY = 703;
+      ITEM_WEPAR_BERRY = 704;
+      ITEM_PINAP_BERRY = 705;
+      ITEM_SPECIAL_CAMERA = 801;
+      ITEM_INCUBATOR_BASIC_UNLIMITED = 901;
+      ITEM_INCUBATOR_BASIC = 902;
+      ITEM_POKEMON_STORAGE_UPGRADE = 1001;
+      ITEM_ITEM_STORAGE_UPGRADE = 1002;
+    }
+  }
+}
+
+message PokemonProto {
+	int32 Id = 1;
+	int32 PokemonId = 2;
+	int32 Cp = 3;
+	int32 Stamina = 4;
+	int32 MaxStamina = 5;
+	int32 Move1 = 6;
+	int32 Move2 = 7;
+	int32 DeployedFortId = 8;
+	string OwnerName = 9;
+	int32 IsEgg = 10;
+	int32 EggKmWalkedTarget = 11;
+	int32 EggKmWalkedStart = 12;
+	int32 Origin = 14;
+	float HeightM = 15;
+	float WeightKg = 16;
+	int32 IndividualAttack = 17;
+	int32 IndividualDefense = 18;
+	int32 IndividualStamina = 19;
+	int32 CpMultiplier = 20;
+	int32 Pokeball = 21;
+	uint64 CapturedS2CellId = 22;
+	int32 BattlesAttacked = 23;
+	int32 BattlesDefended = 24;
+	int32 EggIncubatorId = 25;
+	uint64 CreationTimeMs = 26;
+	int32 NumUpgrades = 27;
+	int32 AdditionalCpMultiplier = 28;
+	int32 Favorite = 29;
+	string Nickname = 30;
+	int32 FromFort = 31;
+}
+
+// A "fort" is the internal name for a gym or pokestop point of interest
+message PokemonFortProto {
+  enum FortSponsor {
+    UNSET_SPONSOR = 0; // was originally "UNSET" in the app itself
+    MCDONALDS = 1;
+    POKEMON_STORE = 2;
+  }
+
+  enum FortRenderingType {
+    DEFAULT = 0;
+    INTERNAL_TEST = 1;
+  }
+
+
+  string FortId = 1;
+  int64 LastModifiedMs = 2;
+  double Latitude = 3;
+  double Longitude = 4;
+  bool Enabled = 8;
+
+  // Fields related to gyms only
+
+  // Team that owns the gym
+  Custom_TeamColor Team = 5;
+
+  // Highest CP Pokemon at the gym
+  Custom_PokemonName GuardPokemonId = 6;
+  int32 GuardPokemonLevel = 7;
+
+  // Prestigate / experience of the gym
+  int64 GymPoints = 10;
+
+  // Whether someone is battling at the gym currently
+  bool IsInBattle = 11;
+
+  // Fields related to pokestops only
+
+  // If 1, this is a pokestop
+  Holoholo.Rpc.FortType FortType = 9;
+
+  // Timestamp when the pokestop can be activated again to get items / xp
+  int64 CooldownCompleteMs = 14;
+
+  FortSponsor Sponsor = 15;
+  FortRenderingType RenderingType = 16;
+
+  // Might represent the type of item applied to the pokestop, right only lures can be applied
+  bytes ActiveFortModifier = 12;
+
+  message Custom_FortLureInfoProto {
+    string FortId = 1;
+    double NotSure2 = 2;
+    Custom_PokemonName ActivePokemon = 3;
+    int64 LureExpiryMs = 4;
+  }
+  Custom_FortLureInfoProto FortLureInfo = 13;
+}
+
+

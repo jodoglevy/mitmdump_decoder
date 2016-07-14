@@ -1,54 +1,58 @@
-
 syntax = "proto3";
 
 package PGo;
+import public "holoholo_shared.proto";
 
 message FortDetailsOutProto {
-  string id = 1;
-  string name = 4;
-  string image_url = 5;
-  bool isPokeStop = 9;
-  double lat = 10;
-  double long = 11;
-  string description = 12;
-  message Lure {
-    uint32 something = 1;
-    uint64 expiration = 2;
-    string trainer = 3;
-  }
-  Lure lure = 13;
+  string Id = 1;
+  Custom_TeamColor Team = 2;
+  Custom_PokemonName Pokemon = 3;
+  string Name = 4;
+  string ImageUrl = 5;
+  int32 Fp = 6;
+  int32 Stamina = 7;
+  int32 MaxStamina = 8;
+  Holoholo.Rpc.FortType FortType = 9;
+  double Latitude = 10;
+  double Longitude = 11;
+  string Description = 12;
+  ClientFortModifierProto Modifier = 13;
+}
+
+message ClientFortModifierProto {
+  int32 ModifierType = 1;
+  int32 ExpirationTimeMs = 2;
+  int32 DeployingPlayerCodename = 3;
 }
 
 message FortDetailsProto {
-  string id = 1;
-  double lat = 2;
-  double long = 3;
+  string Id = 1;
+  double Latitude = 2;
+  double Longitude = 3;
 }
 
 message FortSearchProto {
-  string id = 1;
-
-  //Trainer and Fort for calculating distance?
-  double lat = 2;
-  double long = 3;
-  double lat2 = 4;
-  double long2 = 5;
+  string Id = 1;
+  double PlayerLatDegrees = 2;
+  double PlayerLngDegrees = 3;
+  double FortLatDegrees = 4;
+  double FortLngDegrees = 5;
 }
 
-//I'm making this up as a I go along
 message FortSearchOutProto {
-  bool success = 1;
-  message Result {
-    uint64 ts1 = 1;
-    uint64 ts2 = 2;
-    repeated Item items = 3;
-  }
-  Result result = 2;
+  int32 Result = 1;
+  repeated ItemProto Items = 2;
+  int32 GemsAwarded = 3;
+  int32 EggPokemon = 4;
+  int32 XpAwarded = 5;
+  uint64 CooldownComplete = 6;
+  int32 ChainHackSequenceNumber = 7;
 }
 
-message Item {
-  uint64 timestamp = 1;
-  //Stuff nested under '3'
+message ItemProto {
+  Holoholo.Rpc.Item Item = 1;
+  int32 Count = 2;
+  bool Unseen = 3;
 }
 
 
@@ -63,26 +67,12 @@ message Gym {
       uint64 prestige = 10;
     }
     message Level {
-      message Pokemon {
-        uint64 cp = 3;
-        uint64 currentHealth = 4;
-        uint64 maxHealth = 5;
-        uint64 moveOne = 6;
-        uint64 moveTwo = 7;
-        string trainer = 9;
-        float height = 15;
-        float weight = 16;
-        uint64 CapturedS2CellId = 22;
-        uint64 CreationTimeMs = 26;
-        string nickname = 30;
-      }
-
       message Trainer {
         string name = 1;
         uint64 level = 2;
       }
 
-      Pokemon pokemon = 1;
+      PokemonProto pokemon = 1;
       Trainer trainer = 2;
     }
 
@@ -96,3 +86,31 @@ message Gym {
   uint64 team = 4;
   string description = 5;
 }
+
+message GetGymDetailsProto {
+  string GymId = 1;
+  double PlayerLatDegrees = 2;
+  double PlayerLngDegrees = 3;
+  double GymLatDegrees = 4;
+  double GymLngDegrees = 5;
+}
+
+message GetGymDetailsOutProto {
+  enum ResultEnum {
+    UNSET = 0;
+    SUCCESS = 1;
+    ERROR_NOT_IN_RANGE = 2;
+  }
+
+  GymStateProto GymState = 1;
+  string Name = 2;
+  string Url = 3;
+  ResultEnum Result = 4;
+  string Description = 5;
+}
+
+message GymStateProto {
+  PokemonFortProto FortMapData = 1;
+  //unknown GymMembership = 2;
+}
+

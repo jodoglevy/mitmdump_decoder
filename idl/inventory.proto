@@ -1,1 +1,43 @@
-syntax = "proto2";
+syntax = "proto3";
+
+package PGo;
+import public "holoholo_shared.proto";
+
+message GetInventoryProto {
+  int64 TimestampMillis = 1;
+  repeated Holoholo.Rpc.Item ItemBeenSeen = 2;
+}
+message GetInventoryOutProto {
+  bool Success = 1;
+  InventoryDeltaProto InventoryDelta = 2;
+}
+
+message InventoryDeltaProto {
+  int64 OriginalTimestamp = 1;
+  int64 NewTimestamp = 2;
+  repeated InventoryItemProto InventoryItem = 3;
+}
+
+message InventoryItemProto {
+  int64 ModifiedTimestamp = 1;
+  string DeletedItemKey = 2;
+  string Item = 3;
+}
+
+message RecycleItemProto {
+  Holoholo.Rpc.Item Item = 1;
+  int32 Count = 2;
+}
+
+message RecycleItemOutProto {
+  enum ResultEnum {
+    UNSET = 0;
+    SUCCESS = 1;
+    ERROR_NOT_ENOUGH_COPIES = 2;
+    ERROR_CANNOT_RECYCLE_INCUBATORS = 3;
+  }
+
+  ResultEnum Result = 1;
+  int32 NewCount = 2;
+}
+
