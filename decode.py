@@ -117,10 +117,10 @@ def response(context, flow):
       if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
         mor = GetMapObjectsOutProto()
         mor.ParseFromString(value)
-        print("GET_MAP_OBJECTS %i cells" % len(mor.cells))
+        print("GET_MAP_OBJECTS %i cells" % len(mor.MapCell))
         features = []
 
-        for cell in mor.cells:
+        for cell in mor.MapCell:
           print("S2 Cell %i" % cell.S2CellId)
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
@@ -151,7 +151,7 @@ def response(context, flow):
 
           for pokemon in cell.WildPokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"title": "Wild pokemon: %i" % pokemon.Pokemon, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "suitcase"})
+            f = Feature(geometry=p, id=len(features), properties={"title": "Wild pokemon: %i" % pokemon.Pokemon.PokemonId, "type": "wild pokemon", "marker-color": "FF0000", "marker-symbol": "suitcase"})
             features.append(f)
 
           for pokemon in cell.CatchablePokemon:

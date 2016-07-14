@@ -245,3 +245,38 @@ message Holoholo {
     }
   }
 }
+
+message PokemonProto {
+	int32 Id = 1;
+	int32 PokemonId = 2;
+	int32 Cp = 3;
+	int32 Stamina = 4;
+	int32 MaxStamina = 5;
+	int32 Move1 = 6;
+	int32 Move2 = 7;
+	int32 DeployedFortId = 8;
+	string OwnerName = 9;
+	int32 IsEgg = 10;
+	int32 EggKmWalkedTarget = 11;
+	int32 EggKmWalkedStart = 12;
+	int32 Origin = 14;
+	float HeightM = 15;
+	float WeightKg = 16;
+	int32 IndividualAttack = 17;
+	int32 IndividualDefense = 18;
+	int32 IndividualStamina = 19;
+	int32 CpMultiplier = 20;
+	int32 Pokeball = 21;
+	uint64 CapturedS2CellId = 22;
+	int32 BattlesAttacked = 23;
+	int32 BattlesDefended = 24;
+	int32 EggIncubatorId = 25;
+	uint64 CreationTimeMs = 26;
+	int32 NumUpgrades = 27;
+	int32 AdditionalCpMultiplier = 28;
+	int32 Favorite = 29;
+	string Nickname = 30;
+	int32 FromFort = 31;
+}
+
+

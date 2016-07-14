@@ -127,10 +127,7 @@ message WildPokemonProto {
   // S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
   string SpawnPointId = 5;
 
-  message Custom_PokemonInfoProto {
-    Custom_PokemonName Pokemon = 2;
-  }
-  Custom_PokemonInfoProto PokemonInfo = 7;
+  PokemonProto Pokemon = 7;
 
   // The amount of time before the pokemon will be gone
   int32 TimeTillHiddenMs = 11;
