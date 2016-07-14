@@ -41,11 +41,11 @@ message FortSearchProto {
 
 message FortSearchOutProto {
   int32 Result = 1;
-  ItemProto Items = 2;
+  repeated ItemProto Items = 2;
   int32 GemsAwarded = 3;
   int32 EggPokemon = 4;
   int32 XpAwarded = 5;
-  int32 CooldownComplete = 6;
+  uint64 CooldownComplete = 6;
   int32 ChainHackSequenceNumber = 7;
 }
 
