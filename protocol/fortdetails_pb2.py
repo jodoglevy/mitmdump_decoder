@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='fortdetails.proto',
   package='PGo',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x66ortdetails.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"\xd9\x02\n\x13\x46ortDetailsOutProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12#\n\x04Team\x18\x02 \x01(\x0e\x32\x15.PGo.Custom_TeamColor\x12(\n\x07Pokemon\x18\x03 \x01(\x0e\x32\x17.PGo.Custom_PokemonName\x12\x0c\n\x04Name\x18\x04 \x01(\t\x12\x10\n\x08ImageUrl\x18\x05 \x01(\t\x12\n\n\x02\x46p\x18\x06 \x01(\x05\x12\x0f\n\x07Stamina\x18\x07 \x01(\x05\x12\x12\n\nMaxStamina\x18\x08 \x01(\x05\x12,\n\x08\x46ortType\x18\t \x01(\x0e\x32\x1a.PGo.Holoholo.Rpc.FortType\x12\x10\n\x08Latitude\x18\n \x01(\x01\x12\x11\n\tLongitude\x18\x0b \x01(\x01\x12\x13\n\x0b\x44\x65scription\x18\x0c \x01(\t\x12.\n\x08Modifier\x18\r \x01(\x0b\x32\x1c.PGo.ClientFortModifierProto\"j\n\x17\x43lientFortModifierProto\x12\x14\n\x0cModifierType\x18\x01 \x01(\x05\x12\x18\n\x10\x45xpirationTimeMs\x18\x02 \x01(\x05\x12\x1f\n\x17\x44\x65ployingPlayerCodename\x18\x03 \x01(\x05\"C\n\x10\x46ortDetailsProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x10\n\x08Latitude\x18\x02 \x01(\x01\x12\x11\n\tLongitude\x18\x03 \x01(\x01\"\x81\x01\n\x0f\x46ortSearchProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x18\n\x10PlayerLatDegrees\x18\x02 \x01(\x01\x12\x18\n\x10PlayerLngDegrees\x18\x03 \x01(\x01\x12\x16\n\x0e\x46ortLatDegrees\x18\x04 \x01(\x01\x12\x16\n\x0e\x46ortLngDegrees\x18\x05 \x01(\x01\"\xba\x01\n\x12\x46ortSearchOutProto\x12\x0e\n\x06Result\x18\x01 \x01(\x05\x12\x1d\n\x05Items\x18\x02 \x03(\x0b\x32\x0e.PGo.ItemProto\x12\x13\n\x0bGemsAwarded\x18\x03 \x01(\x05\x12\x12\n\nEggPokemon\x18\x04 \x01(\x05\x12\x11\n\tXpAwarded\x18\x05 \x01(\x05\x12\x18\n\x10\x43ooldownComplete\x18\x06 \x01(\x04\x12\x1f\n\x17\x43hainHackSequenceNumber\x18\x07 \x01(\x05\"8\n\tItemProto\x12\x0c\n\x04Item\x18\x01 \x01(\x05\x12\r\n\x05\x43ount\x18\x02 \x01(\x05\x12\x0e\n\x06Unseen\x18\x03 \x01(\x05\"\xb1\x03\n\x03Gym\x12!\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x10.PGo.Gym.Details\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x0c\n\x04team\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x1a\xc2\x02\n\x07\x44\x65tails\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.PGo.Gym.Details.MoreDetails\x12&\n\x06levels\x18\x02 \x03(\x0b\x32\x16.PGo.Gym.Details.Level\x1aY\n\x0bMoreDetails\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\x12\x10\n\x08prestige\x18\n \x01(\x04\x1a\x84\x01\n\x05Level\x12\"\n\x07pokemon\x18\x01 \x01(\x0b\x32\x11.PGo.PokemonProto\x12/\n\x07trainer\x18\x02 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Trainer\x1a&\n\x07Trainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\x04\"\x85\x01\n\x12GetGymDetailsProto\x12\r\n\x05GymId\x18\x01 \x01(\t\x12\x18\n\x10PlayerLatDegrees\x18\x02 \x01(\x01\x12\x18\n\x10PlayerLngDegrees\x18\x03 \x01(\x01\x12\x15\n\rGymLatDegrees\x18\x04 \x01(\x01\x12\x15\n\rGymLngDegrees\x18\x05 \x01(\x01\"\xe2\x01\n\x15GetGymDetailsOutProto\x12$\n\x08GymState\x18\x01 \x01(\x0b\x32\x12.PGo.GymStateProto\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0b\n\x03Url\x18\x03 \x01(\t\x12\x35\n\x06Result\x18\x04 \x01(\x0e\x32%.PGo.GetGymDetailsOutProto.ResultEnum\x12\x13\n\x0b\x44\x65scription\x18\x05 \x01(\t\"<\n\nResultEnum\x12\t\n\x05UNSET\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x16\n\x12\x45RROR_NOT_IN_RANGE\x10\x02\";\n\rGymStateProto\x12*\n\x0b\x46ortMapData\x18\x01 \x01(\x0b\x32\x15.PGo.PokemonFortProtoP\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x66ortdetails.proto\x12\x03PGo\x1a\x15holoholo_shared.proto\"\xd9\x02\n\x13\x46ortDetailsOutProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12#\n\x04Team\x18\x02 \x01(\x0e\x32\x15.PGo.Custom_TeamColor\x12(\n\x07Pokemon\x18\x03 \x01(\x0e\x32\x17.PGo.Custom_PokemonName\x12\x0c\n\x04Name\x18\x04 \x01(\t\x12\x10\n\x08ImageUrl\x18\x05 \x01(\t\x12\n\n\x02\x46p\x18\x06 \x01(\x05\x12\x0f\n\x07Stamina\x18\x07 \x01(\x05\x12\x12\n\nMaxStamina\x18\x08 \x01(\x05\x12,\n\x08\x46ortType\x18\t \x01(\x0e\x32\x1a.PGo.Holoholo.Rpc.FortType\x12\x10\n\x08Latitude\x18\n \x01(\x01\x12\x11\n\tLongitude\x18\x0b \x01(\x01\x12\x13\n\x0b\x44\x65scription\x18\x0c \x01(\t\x12.\n\x08Modifier\x18\r \x01(\x0b\x32\x1c.PGo.ClientFortModifierProto\"j\n\x17\x43lientFortModifierProto\x12\x14\n\x0cModifierType\x18\x01 \x01(\x05\x12\x18\n\x10\x45xpirationTimeMs\x18\x02 \x01(\x05\x12\x1f\n\x17\x44\x65ployingPlayerCodename\x18\x03 \x01(\x05\"C\n\x10\x46ortDetailsProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x10\n\x08Latitude\x18\x02 \x01(\x01\x12\x11\n\tLongitude\x18\x03 \x01(\x01\"\x81\x01\n\x0f\x46ortSearchProto\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x18\n\x10PlayerLatDegrees\x18\x02 \x01(\x01\x12\x18\n\x10PlayerLngDegrees\x18\x03 \x01(\x01\x12\x16\n\x0e\x46ortLatDegrees\x18\x04 \x01(\x01\x12\x16\n\x0e\x46ortLngDegrees\x18\x05 \x01(\x01\"\xba\x01\n\x12\x46ortSearchOutProto\x12\x0e\n\x06Result\x18\x01 \x01(\x05\x12\x1d\n\x05Items\x18\x02 \x03(\x0b\x32\x0e.PGo.ItemProto\x12\x13\n\x0bGemsAwarded\x18\x03 \x01(\x05\x12\x12\n\nEggPokemon\x18\x04 \x01(\x05\x12\x11\n\tXpAwarded\x18\x05 \x01(\x05\x12\x18\n\x10\x43ooldownComplete\x18\x06 \x01(\x04\x12\x1f\n\x17\x43hainHackSequenceNumber\x18\x07 \x01(\x05\"P\n\tItemProto\x12$\n\x04Item\x18\x01 \x01(\x0e\x32\x16.PGo.Holoholo.Rpc.Item\x12\r\n\x05\x43ount\x18\x02 \x01(\x05\x12\x0e\n\x06Unseen\x18\x03 \x01(\x08\"\xb1\x03\n\x03Gym\x12!\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x10.PGo.Gym.Details\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\timage_url\x18\x03 \x01(\t\x12\x0c\n\x04team\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x1a\xc2\x02\n\x07\x44\x65tails\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.PGo.Gym.Details.MoreDetails\x12&\n\x06levels\x18\x02 \x03(\x0b\x32\x16.PGo.Gym.Details.Level\x1aY\n\x0bMoreDetails\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0b\n\x03lat\x18\x03 \x01(\x01\x12\x0c\n\x04long\x18\x04 \x01(\x01\x12\x10\n\x08prestige\x18\n \x01(\x04\x1a\x84\x01\n\x05Level\x12\"\n\x07pokemon\x18\x01 \x01(\x0b\x32\x11.PGo.PokemonProto\x12/\n\x07trainer\x18\x02 \x01(\x0b\x32\x1e.PGo.Gym.Details.Level.Trainer\x1a&\n\x07Trainer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\x04\"\x85\x01\n\x12GetGymDetailsProto\x12\r\n\x05GymId\x18\x01 \x01(\t\x12\x18\n\x10PlayerLatDegrees\x18\x02 \x01(\x01\x12\x18\n\x10PlayerLngDegrees\x18\x03 \x01(\x01\x12\x15\n\rGymLatDegrees\x18\x04 \x01(\x01\x12\x15\n\rGymLngDegrees\x18\x05 \x01(\x01\"\xe2\x01\n\x15GetGymDetailsOutProto\x12$\n\x08GymState\x18\x01 \x01(\x0b\x32\x12.PGo.GymStateProto\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0b\n\x03Url\x18\x03 \x01(\t\x12\x35\n\x06Result\x18\x04 \x01(\x0e\x32%.PGo.GetGymDetailsOutProto.ResultEnum\x12\x13\n\x0b\x44\x65scription\x18\x05 \x01(\t\"<\n\nResultEnum\x12\t\n\x05UNSET\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x16\n\x12\x45RROR_NOT_IN_RANGE\x10\x02\";\n\rGymStateProto\x12*\n\x0b\x46ortMapData\x18\x01 \x01(\x0b\x32\x15.PGo.PokemonFortProtoP\x00\x62\x06proto3')
   ,
   dependencies=[holoholo__shared__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -49,8 +49,8 @@ _GETGYMDETAILSOUTPROTO_RESULTENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1692,
-  serialized_end=1752,
+  serialized_start=1716,
+  serialized_end=1776,
 )
 _sym_db.RegisterEnumDescriptor(_GETGYMDETAILSOUTPROTO_RESULTENUM)
 
@@ -401,7 +401,7 @@ _ITEMPROTO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='Item', full_name='PGo.ItemProto.Item', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -415,8 +415,8 @@ _ITEMPROTO = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='Unseen', full_name='PGo.ItemProto.Unseen', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -433,7 +433,7 @@ _ITEMPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=895,
-  serialized_end=951,
+  serialized_end=975,
 )
 
 
@@ -491,8 +491,8 @@ _GYM_DETAILS_MOREDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1163,
-  serialized_end=1252,
+  serialized_start=1187,
+  serialized_end=1276,
 )
 
 _GYM_DETAILS_LEVEL_TRAINER = _descriptor.Descriptor(
@@ -528,8 +528,8 @@ _GYM_DETAILS_LEVEL_TRAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1349,
-  serialized_end=1387,
+  serialized_start=1373,
+  serialized_end=1411,
 )
 
 _GYM_DETAILS_LEVEL = _descriptor.Descriptor(
@@ -565,8 +565,8 @@ _GYM_DETAILS_LEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1255,
-  serialized_end=1387,
+  serialized_start=1279,
+  serialized_end=1411,
 )
 
 _GYM_DETAILS = _descriptor.Descriptor(
@@ -602,8 +602,8 @@ _GYM_DETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1065,
-  serialized_end=1387,
+  serialized_start=1089,
+  serialized_end=1411,
 )
 
 _GYM = _descriptor.Descriptor(
@@ -660,8 +660,8 @@ _GYM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=954,
-  serialized_end=1387,
+  serialized_start=978,
+  serialized_end=1411,
 )
 
 
@@ -719,8 +719,8 @@ _GETGYMDETAILSPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1390,
-  serialized_end=1523,
+  serialized_start=1414,
+  serialized_end=1547,
 )
 
 
@@ -779,8 +779,8 @@ _GETGYMDETAILSOUTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1526,
-  serialized_end=1752,
+  serialized_start=1550,
+  serialized_end=1776,
 )
 
 
@@ -810,8 +810,8 @@ _GYMSTATEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1754,
-  serialized_end=1813,
+  serialized_start=1778,
+  serialized_end=1837,
 )
 
 _FORTDETAILSOUTPROTO.fields_by_name['Team'].enum_type = holoholo__shared__pb2._CUSTOM_TEAMCOLOR
@@ -819,6 +819,7 @@ _FORTDETAILSOUTPROTO.fields_by_name['Pokemon'].enum_type = holoholo__shared__pb2
 _FORTDETAILSOUTPROTO.fields_by_name['FortType'].enum_type = holoholo__shared__pb2._HOLOHOLO_RPC_FORTTYPE
 _FORTDETAILSOUTPROTO.fields_by_name['Modifier'].message_type = _CLIENTFORTMODIFIERPROTO
 _FORTSEARCHOUTPROTO.fields_by_name['Items'].message_type = _ITEMPROTO
+_ITEMPROTO.fields_by_name['Item'].enum_type = holoholo__shared__pb2._HOLOHOLO_RPC_ITEM
 _GYM_DETAILS_MOREDETAILS.containing_type = _GYM_DETAILS
 _GYM_DETAILS_LEVEL_TRAINER.containing_type = _GYM_DETAILS_LEVEL
 _GYM_DETAILS_LEVEL.fields_by_name['pokemon'].message_type = holoholo__shared__pb2._POKEMONPROTO

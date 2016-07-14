@@ -50,9 +50,9 @@ message FortSearchOutProto {
 }
 
 message ItemProto {
-  int32 Item = 1;
+  Holoholo.Rpc.Item Item = 1;
   int32 Count = 2;
-  int32 Unseen = 3;
+  bool Unseen = 3;
 }
 
 
