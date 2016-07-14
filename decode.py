@@ -124,18 +124,18 @@ def response(context, flow):
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
             if fort.FortType == 1:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
               f = None
               if fort.Team == BLUE:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Blue Gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == RED:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Red Gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == YELLOW:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Yello Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
               else:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Unclaimed Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
