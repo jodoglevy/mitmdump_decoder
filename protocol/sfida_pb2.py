@@ -18,8 +18,8 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sfida.proto',
   package='',
-  syntax='proto2',
-  serialized_pb=_b('\n\x0bsfida.proto')
+  syntax='proto3',
+  serialized_pb=_b('\n\x0bsfida.protob\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
