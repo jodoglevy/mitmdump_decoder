@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package PGo;
 
-enum TeamColor {
-  UNDEFINED = 0;
+enum Custom_TeamColor {
+  NEUTRAL = 0;
   BLUE = 1;
   RED = 2;
   YELLOW = 3;
 }
 
-enum PokemonName {
+enum Custom_PokemonName {
   MISSINGNO = 0; // just kidding
   BULBASAUR = 1;
   IVYSAUR = 2;
