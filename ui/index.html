@@ -5,6 +5,7 @@
 <title>Get Map Objects</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<script src='leaflet-realtime.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <style>
   body { margin:0; padding:0; }
@@ -18,21 +19,29 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYmV0dHNlIiwiYSI6ImNpbDJuaHh3OTNmaHh1NG0zZTZ1ZG9wZnMifQ.02sgCaJGwgZ7ylt9aai-_w';
-var map = L.mapbox.map('map', 'mapbox.streets').setView([45.5154685974, -122.682891846], 16);
+var map = L.mapbox.map('map', 'mapbox.streets');
 
-// As with any other AJAX request, this technique is subject to the Same Origin Policy:
-// http://en.wikipedia.org/wiki/Same_origin_policy
-// So the CSV file must be on the same domain as the Javascript, or the server
-// delivering it should support CORS.
-var featureLayer = L.mapbox.featureLayer().loadURL('get_map_objects.json').addTo(map);
+//var featureLayer = L.mapbox.featureLayer().loadURL('get_map_objects.json').addTo(map);
+var realtime = L.realtime({url: 'get_map_objects.json', type: 'json'}, {
+  interval: 10 * 1000,
+  pointToLayer: L.mapbox.marker.style,
+  //style: function(feature) { return feature.properties; },
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(feature.properties.title);
+  }
+}).addTo(map);
 
-featureLayer.on('mouseover', function(e) {
+realtime.on('update', function() {
+  map.fitBounds(realtime.getBounds(), {maxZoom: 17});
+});
+
+realtime.on('mouseover', function(e) {
   e.layer.openPopup();
 });
-featureLayer.on('mouseout', function(e) {
+
+realtime.on('mouseout', function(e) {
   e.layer.closePopup();
 });
-
 
 </script>
 
