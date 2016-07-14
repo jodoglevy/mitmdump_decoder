@@ -2,67 +2,91 @@ syntax = "proto3";
 
 package PGo;
 
-enum TeamEnum {
-  UNDEFINED = 0;
-  BLUE = 1;
-  RED = 2;
-  YELLOW = 3;
-}
+import public "holoholo_shared.proto";
 
+// The get map objects request object
 message GetMapObjectsProto {
 	int32 CellId = 1;
 	int32 SinceTimeMs = 2;
-	int32 PlayerLat = 3;
-	int32 PlayerLng = 4;
+	double PlayerLat = 3;
+	double PlayerLng = 4;
 }
 
+// The get map objects response object
 message GetMapObjectsOutProto {
 	repeated ClientMapCellProto cells = 1;
 	int32 Status = 2;
 }
 
+// A cell is a geographical "zone" containing objects like pokemon, gyms, and pokestops
 message ClientMapCellProto {
+	
+	// S2 geographic area that the tile covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
 	uint64 S2CellId = 1;
+
+	// current timestamp
 	int32 AsOfTimeMs = 2;
+
 	repeated PokemonFortProto Fort = 3;
 	repeated ClientSpawnPointProto SpawnPoint = 4;
-	repeated WildPokemonProto WildPokemon = 5;
-	int32 DeletedObject = 6;
+	bool DeletedObject = 6;
 	bool IsTruncatedList = 7;
 	repeated PokemonSummaryFortProto FortSummary = 8;
 	repeated ClientSpawnPointProto DecimatedSpawnPoint = 9;
-	repeated MapPokemonProto CatchablePokemon = 10;
+
+	// Pokemon farther away than 2 "steps", but still in the area (3 "steps" away)
 	repeated NearbyPokemonProto NearbyPokemon = 11;
+
+	// Each pokemon within 2 "steps" or closer will have a WildPokemonProto and MapPokemonProto object
+	repeated WildPokemonProto WildPokemon = 5;
+	repeated MapPokemonProto CatchablePokemon = 10;
 }
 
+// A "fort" is the internal name for a gym or pokestop point of interest
 message PokemonFortProto {
 	int32 FortId = 1;
 	int32 LastModifiedMs = 2;
 	double Latitude = 3;
 	double Longitude = 4;
-	int32 Team = 5;
-	int32 GuardPokemonId = 6;
-	int32 GuardPokemonLevel = 7;
 	bool Enabled = 8;
-	int32 FortType = 9;
-	int32 GymPoints = 10;
-	bool IsInBattle = 11;
-	int32 ActiveFortModifier = 12;
-	int32 ActivePokemon = 13;
-	int32 CooldownCompleteMs = 14;
-	int32 Sponsor = 15;
-	int32 RenderingType = 16;
+
+	// Fields related to gyms only
+
+		// Team that owns the gym
+		TeamColor Team = 5; 
+
+		// Highest CP Pokemon at the gym
+		PokemonName GuardPokemonId = 6;
+		int32 GuardPokemonLevel = 7;
+
+		// Prestigate / experience of the gym
+		int32 GymPoints = 10;
+		
+		// Whether someone is battling at the gym currently
+		bool IsInBattle = 11;
+
+	// Fields related to pokestops only
+		
+		// If true, this is a pokestop
+		bool FortType = 9;
+
+		// TODO - this doesn't seem right -- i thought lure info was a subobject?
+		int32 ActiveFortModifier = 12;
+		PokemonName ActivePokemon = 13;
+		int32 CooldownCompleteMs = 14;
+		int32 Sponsor = 15;
+		int32 RenderingType = 16;
 }
 
 message PokemonSummaryFortProto {
 	int32 FortSummaryId = 1;
 	int32 LastModifiedMs = 2;
-	int32 Latitude = 3;
-	int32 Longitude = 4;
+	double Latitude = 3;
+	double Longitude = 4;
 }
 
 message NearbyPokemonProto {
-	int32 PokedexNumber = 1;
+	PokemonName PokedexNumber = 1;
 	float DistanceMeters = 2;
 	int32 EncounterId = 3;
 }
@@ -72,20 +96,26 @@ message WildPokemonProto {
 	int32 LastModifiedMs = 2;
 	double Latitude = 3;
 	double Longitude = 4;
+
+	// S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
 	int32 SpawnPointId = 5;
-	int32 Pokemon = 7;
+
+	PokemonName Pokemon = 7;
 	int32 TimeTillHiddenMs = 11;
 }
 
 message ClientSpawnPointProto {
   double Latitude = 2;
-	double Longitude = 3;
+  double Longitude = 3;
 }
 
 message MapPokemonProto {
+	
+	// S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
 	int32 SpawnpointId = 1;
+
 	int32 EncounterId = 2;
-	int32 PokedexTypeId = 3;
+	PokemonName PokedexTypeId = 3;
 	int32 ExpirationTimeMs = 4;
 	double Latitude = 5;
 	double Longitude = 6;
