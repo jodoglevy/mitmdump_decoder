@@ -124,18 +124,18 @@ def response(context, flow):
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
             if fort.FortType == 1:
-              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
               f = None
               if fort.Team == BLUE:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Blue Gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == RED:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Red Gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == YELLOW:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Yellow Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
               else:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Neutral Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
@@ -161,7 +161,11 @@ def response(context, flow):
           for poke in cell.NearbyPokemon:
             gps = request_location[env.response_id]
             if poke.EncounterId in pokeLocation:
-              if gps[0] != pokeLocation[poke.EncounterId][0][0]:
+              add=True
+              for loc in pokeLocation[poke.EncounterId]:
+                if gps[0] == loc[0] and gps[1] == loc[1]:
+                  add=False
+              if add:
                 pokeLocation[poke.EncounterId].append((gps[0], gps[1], poke.DistanceMeters/1000))
             else:
               pokeLocation[poke.EncounterId] = [(gps[0], gps[1], poke.DistanceMeters/1000)]
@@ -188,4 +192,4 @@ def response(context, flow):
       else:
         print("API: %s" % key)
 
-
+# vim: set tabstop=2 shiftwidth=2 expandtab : #
