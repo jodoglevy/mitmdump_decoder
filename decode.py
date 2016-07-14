@@ -133,18 +133,18 @@ def response(context, flow):
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
             if fort.FortType == 1:
-              f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
+              f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
               f = None
               if fort.Team == BLUE:
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Blue Gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Blue Gym", "marker-color": "0000FF", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == RED:
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Red Gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Red Gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == YELLOW:
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Yellow Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Yellow Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
               else:
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Neutral Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Neutral Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
@@ -159,12 +159,12 @@ def response(context, flow):
 
           for pokemon in cell.WildPokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Wild pokemon: %i" % pokemon.Pokemon.PokemonId, "marker-color": "FF0000", "marker-symbol": "suitcase"})
+            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Wild %s" % Custom_PokemonName.Name(pokemon.Pokemon.PokemonId), "marker-color": "FF0000", "marker-symbol": "suitcase"})
             features.append(f)
 
           for pokemon in cell.CatchablePokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Catchable pokemon: %i" % pokemon.PokedexTypeId, "marker-color": "000000", "marker-symbol": "circle"})
+            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Catchable %s" % Custom_PokemonName.Name(pokemon.PokedexTypeId), "marker-color": "000000", "marker-symbol": "circle"})
             features.append(f)
 
           for poke in cell.NearbyPokemon:
@@ -182,7 +182,7 @@ def response(context, flow):
               lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
               if not math.isnan(lat) and not math.isnan(lon) :
                 p = Point((lon, lat))
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Nearby pokemon %i" % poke.PokedexNumber, "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
+                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Nearby %s" % Custom_PokemonName.Name(poke.PokedexNumber), "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
                 features.append(f)
 
 
