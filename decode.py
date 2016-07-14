@@ -20,6 +20,14 @@ from protocol.holoholo_shared_pb2 import *
 from protocol.map_pb2 import *
 from protocol.rpc_pb2 import *
 from protocol.fortdetails_pb2 import *
+from protocol.bridge_pb2 import *
+from protocol.clientrpc_pb2 import *
+from protocol.gymbattlev2_pb2 import *
+from protocol.in_app_purchases_pb2 import *
+from protocol.inventory_pb2 import *
+from protocol.platform_actions_pb2 import *
+from protocol.sfida_pb2 import *
+from protocol.signals_pb2 import *
 
 request_api = {} #Match responses to their requests
 pokeLocation = {}
@@ -109,9 +117,9 @@ def request(context, flow):
     klass = underscore_to_camelcase(name) + "Proto"
     try:
       mor = deserialize(value, "." + klass)
-      print(mor)
+      print("Deserialized Request %s" % name)
     except:
-      print("API: %s" % name)
+      print("Missing Request API: %s" % name)
 
 def response(context, flow):
   with decoded(flow.response):
@@ -123,10 +131,14 @@ def response(context, flow):
 
       name = Holoholo.Rpc.Method.Name(key)
       klass = underscore_to_camelcase(name) + "OutProto"
-      mor = deserialize(value, "." + klass)
+      try:
+        mor = deserialize(value, "." + klass)
+        print("Deserialized Response %s" % name)
+      except:
+        print("Missing Response API: %s" % name)
+
 
       if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
-        print(mor)
         features = []
 
         for cell in mor.MapCell:
