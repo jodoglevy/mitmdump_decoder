@@ -21,11 +21,6 @@ enum FortRenderingType {
   INTERNAL_TEST = 1;
 }
 
-enum FortType {
-  GYM = 0;
-  POKESTOP = 1; // was originally "CHECKPOINT" in the app itself
-}
-
 // The get map objects request object
 message GetMapObjectsProto {
   int32 CellId = 1;
@@ -90,7 +85,7 @@ message PokemonFortProto {
   // Fields related to pokestops only
 
   // If 1, this is a pokestop
-  FortType FortType = 9;
+  Holoholo.Rpc.FortType FortType = 9;
 
   // Timestamp when the pokestop can be activated again to get items / xp
   int64 CooldownCompleteMs = 14;

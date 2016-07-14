@@ -16,6 +16,7 @@ import numpy
 import math
 from google.protobuf.internal import enum_type_wrapper
 
+from protocol.holoholo_shared_pb2 import *
 from protocol.map_pb2 import *
 from protocol.rpc_pb2 import *
 from protocol.fortdetails_pb2 import *
@@ -85,20 +86,20 @@ def request(context, flow):
 
     request_api[env.request_id] = key
 
-    if (key == GET_MAP_OBJECTS):
+    if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
       mor = GetMapObjectsProto()
       mor.ParseFromString(value)
       print(mor)
       request_location[env.request_id] = (env.lat,env.long)
-    elif (key == FORT_DETAILS):
+    elif (key == Holoholo.Rpc.FORT_DETAILS):
       mor = FortDetailsProto()
       mor.ParseFromString(value)
       print(mor)
-    elif (key == FORT_SEARCH):
+    elif (key == Holoholo.Rpc.FORT_SEARCH):
       mor = FortSearchProto()
       mor.ParseFromString(value)
       print(mor)
-    elif (key == GET_GYM_DETAILS):
+    elif (key == Holoholo.Rpc.GET_GYM_DETAILS):
       mor = FortDetailsProto()
       mor.ParseFromString(value)
       print(mor)
@@ -113,7 +114,7 @@ def response(context, flow):
       key = request_api[env.response_id]
       value = env.returns[0]
 
-      if (key == GET_MAP_OBJECTS):
+      if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
         mor = GetMapObjectsOutProto()
         mor.ParseFromString(value)
         print("GET_MAP_OBJECTS %i cells" % len(mor.cells))
@@ -181,11 +182,11 @@ def response(context, flow):
         dump = geojson.dumps(fc, sort_keys=True)
         f = open('ui/get_map_objects.json', 'w')
         f.write(dump)
-      elif (key == FORT_DETAILS):
+      elif (key == Holoholo.Rpc.FORT_DETAILS):
         mor = FortDetailsOutProto()
         mor.ParseFromString(value)
         print(mor)
-      elif (key == FORT_SEARCH):
+      elif (key == Holoholo.Rpc.FORT_SEARCH):
         mor = FortSearchOutProto()
         mor.ParseFromString(value)
         print(mor)
