@@ -133,9 +133,9 @@ def response(context, flow):
               elif fort.Team == RED:
                 f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Red Gym", "marker-color": "FF0000", "marker-symbol": "town-hall", "marker-size": "large"})
               elif fort.Team == YELLOW:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Yello Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Yellow Gym", "marker-color": "FFFF00", "marker-symbol": "town-hall", "marker-size": "large"})
               else:
-                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Unclaimed Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
+                f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Neutral Gym", "marker-color": "808080", "marker-symbol": "town-hall", "marker-size": "large"})
               features.append(f)
 
           for spawn in cell.SpawnPoint:
