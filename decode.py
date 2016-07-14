@@ -182,7 +182,7 @@ def response(context, flow):
               lat, lon = triangulate(pokeLocation[poke.EncounterId][0],pokeLocation[poke.EncounterId][1],pokeLocation[poke.EncounterId][2])
               if not math.isnan(lat) and not math.isnan(lon) :
                 p = Point((lon, lat))
-                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Nearby pokemon %i" % poke.PokemonId, "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
+                f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Nearby pokemon %i" % poke.PokedexNumber, "marker-color": "FFFFFF", "marker-symbol": "dog-park"})
                 features.append(f)
 
 
