@@ -132,7 +132,7 @@ def response(context, flow):
         for cell in mor.MapCell:
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
-            if fort.FortType == 1:
+            if fort.FortType == Holoholo.Rpc.CHECKPOINT:
               f = Feature(geometry=p, id=len(features), properties={"id": fort.FortId, "title": "Pokestop", "marker-color": "00007F", "marker-symbol": "town-hall"})
               features.append(f)
             else:
@@ -159,12 +159,12 @@ def response(context, flow):
 
           for pokemon in cell.WildPokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Wild %s" % Custom_PokemonName.Name(pokemon.Pokemon.PokemonId), "marker-color": "FF0000", "marker-symbol": "suitcase"})
+            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "TimeTillHiddenMs": pokemon.TimeTillHiddenMs, "title": "Wild %s" % Custom_PokemonName.Name(pokemon.Pokemon.PokemonId), "marker-color": "FF0000", "marker-symbol": "suitcase"})
             features.append(f)
 
           for pokemon in cell.CatchablePokemon:
             p = Point((pokemon.Longitude, pokemon.Latitude))
-            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "title": "Catchable %s" % Custom_PokemonName.Name(pokemon.PokedexTypeId), "marker-color": "000000", "marker-symbol": "circle"})
+            f = Feature(geometry=p, id=len(features), properties={"id": len(features), "ExpirationTimeMs": pokemon.ExpirationTimeMs, "title": "Catchable %s" % Custom_PokemonName.Name(pokemon.PokedexTypeId), "marker-color": "000000", "marker-symbol": "circle"})
             features.append(f)
 
           for poke in cell.NearbyPokemon:
