@@ -29,6 +29,12 @@ from protocol.platform_actions_pb2 import *
 from protocol.sfida_pb2 import *
 from protocol.signals_pb2 import *
 
+
+#We can often look up the right deserialization structure based on the method, but there are some deviations
+mismatched_apis = {
+  'RECYCLE_INVENTORY_ITEM': 'RECYCLE_ITEM'
+}
+
 request_api = {} #Match responses to their requests
 pokeLocation = {}
 request_location = {}
@@ -114,6 +120,7 @@ def request(context, flow):
     request_location[env.request_id] = (env.lat,env.long)
 
     name = Holoholo.Rpc.Method.Name(key)
+    name = mismatched_apis.get(name, name) #return class name when not the same as method
     klass = underscore_to_camelcase(name) + "Proto"
     try:
       mor = deserialize(value, "." + klass)
@@ -130,6 +137,7 @@ def response(context, flow):
       value = env.returns[0]
 
       name = Holoholo.Rpc.Method.Name(key)
+      name = mismatched_apis.get(name, name) #return class name when not the same as method
       klass = underscore_to_camelcase(name) + "OutProto"
       try:
         mor = deserialize(value, "." + klass)
