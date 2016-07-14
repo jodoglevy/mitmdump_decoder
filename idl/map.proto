@@ -83,7 +83,7 @@ message ClientSpawnPointProto {
 
 message MapPokemonProto {
   // S2 geographic area of the spawn point (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-  string SpawnpointId = 1;
+  string SpawnPointId = 1;
 
   double EncounterId = 2;
   Custom_PokemonName PokedexTypeId = 3;
