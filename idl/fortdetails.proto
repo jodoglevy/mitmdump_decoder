@@ -86,3 +86,31 @@ message Gym {
   uint64 team = 4;
   string description = 5;
 }
+
+message GetGymDetailsProto {
+  string GymId = 1;
+  double PlayerLatDegrees = 2;
+  double PlayerLngDegrees = 3;
+  double GymLatDegrees = 4;
+  double GymLngDegrees = 5;
+}
+
+message GetGymDetailsOutProto {
+  enum ResultEnum {
+    UNSET = 0;
+    SUCCESS = 1;
+    ERROR_NOT_IN_RANGE = 2;
+  }
+
+  GymStateProto GymState = 1;
+  string Name = 2;
+  string Url = 3;
+  ResultEnum Result = 4;
+  string Description = 5;
+}
+
+message GymStateProto {
+  PokemonFortProto FortMapData = 1;
+  //unknown GymMembership = 2;
+}
+

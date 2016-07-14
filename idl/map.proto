@@ -10,17 +10,6 @@ enum GetMapObjectsOutProtoStatus {
   LOCATION_UNSET = 2;
 }
 
-enum FortSponsor {
-  UNSET_SPONSOR = 0; // was originally "UNSET" in the app itself
-  MCDONALDS = 1;
-  POKEMON_STORE = 2;
-}
-
-enum FortRenderingType {
-  DEFAULT = 0;
-  INTERNAL_TEST = 1;
-}
-
 // The get map objects request object
 message GetMapObjectsProto {
   int32 CellId = 1;
@@ -57,52 +46,6 @@ message ClientMapCellProto {
   // Each pokemon within 2 "steps" or closer will have a WildPokemonProto and MapPokemonProto object
   repeated WildPokemonProto WildPokemon = 5;
   repeated MapPokemonProto CatchablePokemon = 10;
-}
-
-// A "fort" is the internal name for a gym or pokestop point of interest
-message PokemonFortProto {
-  string FortId = 1;
-  int64 LastModifiedMs = 2;
-  double Latitude = 3;
-  double Longitude = 4;
-  bool Enabled = 8;
-
-  // Fields related to gyms only
-
-  // Team that owns the gym
-  Custom_TeamColor Team = 5;
-
-  // Highest CP Pokemon at the gym
-  Custom_PokemonName GuardPokemonId = 6;
-  int32 GuardPokemonLevel = 7;
-
-  // Prestigate / experience of the gym
-  int64 GymPoints = 10;
-
-  // Whether someone is battling at the gym currently
-  bool IsInBattle = 11;
-
-  // Fields related to pokestops only
-
-  // If 1, this is a pokestop
-  Holoholo.Rpc.FortType FortType = 9;
-
-  // Timestamp when the pokestop can be activated again to get items / xp
-  int64 CooldownCompleteMs = 14;
-
-  FortSponsor Sponsor = 15;
-  FortRenderingType RenderingType = 16;
-
-  // Might represent the type of item applied to the pokestop, right only lures can be applied
-  bytes ActiveFortModifier = 12;
-
-  message Custom_FortLureInfoProto {
-    string FortId = 1;
-    double NotSure2 = 2;
-    Custom_PokemonName ActivePokemon = 3;
-    int64 LureExpiryMs = 4;
-  }
-  Custom_FortLureInfoProto FortLureInfo = 13;
 }
 
 message PokemonSummaryFortProto {
