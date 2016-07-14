@@ -1,7 +1,7 @@
 
 ## Description
 
-Requires mitmproxy, protobuf
+Requires mitmproxy, protobuf, geojson, numpy
 
 $ mitmdump -p 8888 -s decode.py "~d pgorelease.nianticlabs.com"
 
