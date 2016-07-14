@@ -25,22 +25,19 @@ var map = L.mapbox.map('map', 'mapbox.streets');
 var realtime = L.realtime({url: 'get_map_objects.json', type: 'json'}, {
   interval: 10 * 1000,
   pointToLayer: L.mapbox.marker.style,
-  //style: function(feature) { return feature.properties; },
+  style: function(feature) { return feature.properties; },
   onEachFeature: function (feature, layer) {
     layer.bindPopup(feature.properties.title);
   }
 }).addTo(map);
 
+//Set the view after the first load
+var loaded = false;
 realtime.on('update', function() {
-  map.fitBounds(realtime.getBounds(), {maxZoom: 17});
-});
-
-realtime.on('mouseover', function(e) {
-  e.layer.openPopup();
-});
-
-realtime.on('mouseout', function(e) {
-  e.layer.closePopup();
+  if(!loaded) {
+    map.fitBounds(realtime.getBounds(), {maxZoom: 16});
+    loaded = true;
+  }
 });
 
 </script>
