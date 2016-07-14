@@ -76,6 +76,24 @@ def triangulate((LatA, LonA, DistA), (LatB, LonB, DistB), (LatC, LonC, DistC)):
 
   return (lat, lon)
 
+#http://stackoverflow.com/questions/28867596/deserialize-protobuf-in-python-from-class-name
+def deserialize(message, typ):
+  import importlib
+  module_name, class_name = typ.rsplit(".", 1)
+  #module = importlib.import_module(module_name)
+  MyClass = globals()[class_name]
+  instance = MyClass()
+  instance.ParseFromString(message)
+  return instance
+
+def underscore_to_camelcase(value):
+  def camelcase():
+    while True:
+      yield str.capitalize
+
+  c = camelcase()
+  return "".join(c.next()(x) if x else '_' for x in value.split("_"))
+
 @concurrent
 def request(context, flow):
   if flow.match("~d pgorelease.nianticlabs.com"):
@@ -87,24 +105,13 @@ def request(context, flow):
     request_api[env.request_id] = key
     request_location[env.request_id] = (env.lat,env.long)
 
-    if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
-      mor = GetMapObjectsProto()
-      mor.ParseFromString(value)
+    name = Holoholo.Rpc.Method.Name(key)
+    klass = underscore_to_camelcase(name) + "Proto"
+    try:
+      mor = deserialize(value, "." + klass)
       print(mor)
-    elif (key == Holoholo.Rpc.FORT_DETAILS):
-      mor = FortDetailsProto()
-      mor.ParseFromString(value)
-      print(mor)
-    elif (key == Holoholo.Rpc.FORT_SEARCH):
-      mor = FortSearchProto()
-      mor.ParseFromString(value)
-      print(mor)
-    elif (key == Holoholo.Rpc.GET_GYM_DETAILS):
-      mor = FortDetailsProto()
-      mor.ParseFromString(value)
-      print(mor)
-    else:
-      print("API: %s" % key)
+    except:
+      print("API: %s" % name)
 
 def response(context, flow):
   with decoded(flow.response):
@@ -114,9 +121,11 @@ def response(context, flow):
       key = request_api[env.response_id]
       value = env.returns[0]
 
+      name = Holoholo.Rpc.Method.Name(key)
+      klass = underscore_to_camelcase(name) + "OutProto"
+      mor = deserialize(value, "." + klass)
+
       if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
-        mor = GetMapObjectsOutProto()
-        mor.ParseFromString(value)
         print(mor)
         features = []
 
@@ -181,15 +190,5 @@ def response(context, flow):
         dump = geojson.dumps(fc, sort_keys=True)
         f = open('ui/get_map_objects.json', 'w')
         f.write(dump)
-      elif (key == Holoholo.Rpc.FORT_DETAILS):
-        mor = FortDetailsOutProto()
-        mor.ParseFromString(value)
-        print(mor)
-      elif (key == Holoholo.Rpc.FORT_SEARCH):
-        mor = FortSearchOutProto()
-        mor.ParseFromString(value)
-        print(mor)
-      else:
-        print("API: %s" % key)
 
 # vim: set tabstop=2 shiftwidth=2 expandtab : #
