@@ -161,7 +161,11 @@ def response(context, flow):
           for poke in cell.NearbyPokemon:
             gps = request_location[env.response_id]
             if poke.EncounterId in pokeLocation:
-              if gps[0] != pokeLocation[poke.EncounterId][0][0]:
+              add=True
+              for loc in pokeLocation[poke.EncounterId]:
+                if gps[0] == loc[0] and gps[1] == loc[1]:
+                  add=False
+              if add:
                 pokeLocation[poke.EncounterId].append((gps[0], gps[1], poke.DistanceMeters/1000))
             else:
               pokeLocation[poke.EncounterId] = [(gps[0], gps[1], poke.DistanceMeters/1000)]
