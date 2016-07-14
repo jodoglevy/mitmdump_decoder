@@ -85,12 +85,12 @@ def request(context, flow):
     value = env.parameter[0].value
 
     request_api[env.request_id] = key
+    request_location[env.request_id] = (env.lat,env.long)
 
     if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
       mor = GetMapObjectsProto()
       mor.ParseFromString(value)
       print(mor)
-      request_location[env.request_id] = (env.lat,env.long)
     elif (key == Holoholo.Rpc.FORT_DETAILS):
       mor = FortDetailsProto()
       mor.ParseFromString(value)
@@ -117,11 +117,10 @@ def response(context, flow):
       if (key == Holoholo.Rpc.GET_MAP_OBJECTS):
         mor = GetMapObjectsOutProto()
         mor.ParseFromString(value)
-        print("GET_MAP_OBJECTS %i cells" % len(mor.MapCell))
+        print(mor)
         features = []
 
         for cell in mor.MapCell:
-          print("S2 Cell %i" % cell.S2CellId)
           for fort in cell.Fort:
             p = Point((fort.Longitude, fort.Latitude))
             if fort.FortType == 1:
